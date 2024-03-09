@@ -1,9 +1,9 @@
-{ ... }:
+{ ... }: 
 {
   programs.waybar.settings.mainBar = {
     position= "top";
     layer= "top";
-    height= 10;
+    height= 24;
     margin-top= 0;
     margin-bottom= 0;
     margin-left= 0;
@@ -22,12 +22,13 @@
         "disk"
         "pulseaudio" 
         "network"
+        "battery"
     ];
     clock= {
-        format = " {:%H:%M}";
+        format = " { =%H =%M}";
         tooltip= "true";
-        tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= " {:%d/%m}";
+        tooltip-format= "<big>{ =%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        format-alt= " { =%d/%m}";
     };
     "hyprland/workspaces"= {
         active-only= false;
@@ -68,6 +69,20 @@
         format = "󰋊 {percentage_used}%";
         interval= 60;
     };
+    battery = {
+        states = {
+            # "good" = 95,
+            warning = 30;
+            critical = 15;
+        };
+        format = "{capacity}% {icon}";
+        format-charging = "{capacity}% ";
+        format-plugged = "{capacity}% ";
+        format-alt = "{time} {icon}";
+        # "format-good" = "", // An empty format will hide the module
+        # "format-full" = "",
+        format-icons = ["" "" "" "" ""];
+    };
     network = {
         format-wifi = "  {signalStrength}%";
         format-ethernet = "󰀂 ";
@@ -89,7 +104,7 @@
         on-click= "pamixer -t";
     };
     "custom/launcher"= {
-        format= "";
+        format= " ";
         on-click= "pkill wofi || wofi --show drun";
         on-click-right= "pkill wofi || wallpaper-picker"; 
         tooltip= "false";

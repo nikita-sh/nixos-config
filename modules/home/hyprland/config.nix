@@ -14,7 +14,7 @@
       exec-once = nm-applet &
       exec-once = wl-paste --primary --watch wl-copy --primary --clear
       # exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
-      # exec-once = sleep 1 && swaylock
+      exec-once = sleep 1 && swaylock
       exec-once = hyprctl setcursor Nordzy-cursors 22 &
       exec-once = waybar &
       exec-once = mako &
@@ -42,9 +42,11 @@
 
         gaps_in = 0
         gaps_out = 0
-        border_size = 2
-        col.active_border = rgb(cba6f7) rgb(94e2d5) 45deg
-        col.inactive_border = 0x00000000
+        border_size = 1
+        col.active_border = rgb(458588)
+        col.inactive_border = rgba(595959aa)
+        # col.active_border = rgb(cba6f7) rgb(94e2d5) 45deg
+        # col.inactive_border = 0x00000000
         # border_part_of_window = true
 
         # gaps_in = 5
