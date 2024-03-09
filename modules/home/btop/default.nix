@@ -4,7 +4,7 @@
     enable = true;
     
     settings = {
-      color_theme = "dracula";
+      color_theme = "gruvbox";
       theme_background = false;
       update_ms = 500;
     };

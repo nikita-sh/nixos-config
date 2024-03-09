@@ -1,7 +1,7 @@
 { pkgs, inputs, username, ...}:
 let
   packages = with pkgs; [
-    fish
+    zsh
   ];
 in
 {

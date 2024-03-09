@@ -3,7 +3,7 @@
   fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.nerdfonts
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     pkgs.twemoji-color-font
     pkgs.noto-fonts-emoji
   ];
@@ -11,24 +11,22 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "FiraCode";
       size = 11;
     };
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
+      package = pkgs.papirus-icon-theme;
     };
     theme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
-        size = "compact";
-        # tweaks = [ "rimless" ];
-        variant = "mocha";
-      };
+      name = "Gruvbox Dark";
+      package = pkgs.gruvbox-dark-gtk;
+      # package = pkgs.catppuccin-gtk.override {
+      #   accents = [ "lavender" ];
+      #   size = "compact";
+      #   # tweaks = [ "rimless" ];
+      #   variant = "mocha";
+      # };
     };
     cursorTheme = {
       name = "Nordzy-cursors";

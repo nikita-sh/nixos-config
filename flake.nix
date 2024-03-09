@@ -1,5 +1,5 @@
 {
-  description = "FrostPhoenix's nixos configuration";
+  description = "nikita's nixos configuration - built off of FrostPhoenix's";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -22,29 +22,129 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin-bat = {
-      url = "github:catppuccin/bat";
-      flake = false;
+    # neovim
+    neovim-flake.url = "github:nikita-sh/neovim-flake";
+
+    NixOS-WSL = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin-cava = {
-      url = "github:catppuccin/cava";
-      flake = false;
-    };
-    catppuccin-starship = {
-      url = "github:catppuccin/starship";
-      flake = false;
-    };
+
+    # catppuccin-bat = {
+    #   url = "github:catppuccin/bat";
+    #   flake = false;
+    # };
+    # catppuccin-cava = {
+    #   url = "github:catppuccin/cava";
+    #   flake = false;
+    # };
+    # catppuccin-starship = {
+    #   url = "github:catppuccin/starship";
+    #   flake = false;
+    # };
+
   };
 
-  outputs = { nixpkgs, self, ...} @ inputs:
+  outputs = { 
+    neovim-flake,
+    home-manager,
+    NixOS-WSL,
+    nixpkgs,
+    self,
+    ...
+  } @ inputs:
     let
       selfPkgs = import ./pkgs;
-      username = "frostphoenix";
-    in
-    {
-      overlays.default = selfPkgs.overlay;
-      nixosConfigurations = import ./modules/core/default.nix {
-        inherit self nixpkgs inputs username;
-      };
+      username = "nikita";
+      hname = "nixos";
+      configModule = {
+        config.vim = {
+          theme = {
+            enable = true;
+            style = "dark";
+            name = "gruvbox";
+          };
+          autocomplete = {
+            enable = true;
+          };
+          languages = {
+            haskell = { 
+              enable = true;
+              treesitter.enable = true;
+              lsp.enable = true;
+            };
+            nix = {
+              enable = true;
+              extraDiagnostics.enable = true;
+              format.enable = true;
+              lsp.enable = true;
+              treesitter.enable = true;
+            };
+            rust = {
+              enable = true;
+              crates = {
+                enable = true;
+                codeActions = true;
+              };
+              debugger.enable = true;
+              lsp.enable = true;
+            };
+            sql.enable = true;
+            ts.enable = true;
+            python = {
+              enable = true;
+              format.enable = true;
+              lsp.enable = true;
+              treesitter.enable = true;
+            };
+            markdown.enable = true;
+          };
+          filetree = {
+            nvimTreeLua = {
+                enable = true;
+                openTreeOnNewTab = true;
+                disableNetRW = true;
+            };
+          };
+          git = {
+            enable = true;
+            gitsigns.enable = true;
+          };
+          telescope = {
+            enable = true;
+          };
+          autopairs = {
+            enable = true;
+          };
+          statusline = {
+            lualine = {
+                enable = true;
+            };
+          };
+          visuals = {
+            enable = true;
+            cursorWordline.enable = true;
+            indentBlankline = {
+              enable = true;
+              eolChar = null;
+              fillChar = null;
+            };
+          };
+        };
     };
+    
+    pkgs = nixpkgs.legacyPackages.${"x86_64-linux"};
+    customNeovim = neovim-flake.lib.neovimConfiguration {
+        modules = [configModule];
+        inherit pkgs;
+    }; 
+  in {
+    # build nvim
+    packages.${"x86_64-linux"}.neovim = customNeovim;
+
+    overlays.default = selfPkgs.overlay;
+    nixosConfigurations = import ./modules/core/default.nix {
+      inherit self nixpkgs inputs username hname;
+    };
+  };
 }

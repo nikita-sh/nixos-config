@@ -4,7 +4,7 @@
     enable = true;
     
     settings = {
-      "colorscheme" = "catppuccin-mocha";
+      "colorscheme" = "gruvbox";
       "*.nix" = {"tabsize" = 2;};
       "*.ml"  = {"tabsize" = 2;};
       # "tabstospaces" = true;

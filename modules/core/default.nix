@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, self, username, ...}:
+{ inputs, nixpkgs, self, username, hname, ...}:
 let
   system = "x86_64-linux";
   pkgs = import nixpkgs {
@@ -9,7 +9,7 @@ let
 in
 {
   nixos = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs username; };
+    specialArgs = { inherit self inputs username hname; };
     modules =
       [ (import ./bootloader.nix) ]
       ++ [ (import ./hardware.nix) ]
@@ -24,8 +24,7 @@ in
       ++ [ (import ./system.nix) ]
       ++ [ (import ./user.nix) ]
       ++ [ (import ./wayland.nix) ]
-      ++ [ (import ./cloudflare-warp.nix) ]
-      ++ [ (import ./virtualization.nix) ]
+      # ++ [ (import ./virtualization.nix) ]
       ++ [ (import ./../../hosts/nixos/hardware-configuration.nix) ]
     ;
   };
