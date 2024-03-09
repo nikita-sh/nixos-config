@@ -13,6 +13,26 @@
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
     '';
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.8.0";
+          sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+        };
+      }
+    ];
+    initExtra = ''
+      source /home/nikita/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
+    '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
@@ -25,6 +45,8 @@
       icat = "kitten icat";
       dsize = "du -hs";
       findw = "grep -rl";
+      nvim = "nix run /home/nikita/dev/nixos-config#neovim --";
+      s = "kitten ssh";
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
@@ -60,12 +82,6 @@
       gchb = "git checkout -b";
       gcoe = "git config user.email";
       gcon = "git config user.name";
-
-      # g = "lazygit";
-
-      # python
-      piv = "python -m venv .venv";
-      psv = "source .venv/bin/activate";
     };
   };
 

@@ -26,6 +26,9 @@ in
       ++ [ (import ./office-vpn.nix) ]
       ++ [ (import ./software-workstation.nix) ]
       ++ [ (import ./thinkpad.nix) ]
+      ++ [ (import ./probe-rs.nix) ]
+      ++ [ (import ./vpn.nix) ]
+      # ++ [ (import ./virtualization.nix) ]
       ++ [ (import ./../../hosts/nixos/hardware-configuration.nix) ]
     ;
   };

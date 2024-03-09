@@ -4,7 +4,7 @@
     enable = true;
     config = {
       pager = "less -FR";
-      theme = "gruvbox";
+      theme = "gruvbox-dark";
     };
   };
 }

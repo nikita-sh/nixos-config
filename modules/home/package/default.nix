@@ -45,5 +45,15 @@
     wget
     xdg-utils
     inputs.alejandra.defaultPackage.${system}
+    cargo
+    direnv
+    nmap
+    neofetch
+    pstree
+    qemu
+    rustc
+    slack
+    spotify
+    zoom-us
   ]);
 }

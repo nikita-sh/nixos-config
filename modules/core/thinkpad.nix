@@ -18,10 +18,10 @@ in
   ];
 
   hardware = {
-    bluetooth = {
-      enable = true;
-      package = pkgs.bluez;
-    };
+    #bluetooth = {
+    #  enable = true;
+    #  package = pkgs.bluez;
+    #};
 
     nvidia = {
       modesetting.enable = true;

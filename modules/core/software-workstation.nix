@@ -14,12 +14,12 @@
       pavucontrol
     ];
 
-    fonts.packages = with pkgs; [
-      fira-code
-      open-sans
-      font-awesome
-      nerdfonts
-    ];
+    # fonts.packages = with pkgs; [
+    #   fira-code
+    #   open-sans
+    #   font-awesome
+    #   nerdfonts
+    # ];
 
     programs.ssh.startAgent = true;
 
@@ -51,7 +51,7 @@
     ];
 
     services = {
-      openssh.enable = true;
+      # openssh.enable = true;
       # xserver = {
       #   enable = true;
       #   layout = "us";
@@ -66,10 +66,10 @@
 
     users.defaultUserShell = pkgs.zsh;
 
-    virtualisation.libvirtd = {
-      enable = true;
-      qemu.ovmf.enable = true;
-    };
+    # virtualisation.libvirtd = {
+    #   enable = true;
+    #   qemu.ovmf.enable = true;
+    # };
 
     nix = {
       settings = {

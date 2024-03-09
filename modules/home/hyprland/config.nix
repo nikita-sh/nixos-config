@@ -5,7 +5,7 @@
       $mainMod = SUPER
 
       monitor=,preferred,auto,auto
-      monitor=,1920x1200,auto,auto
+      # monitor=,1920x1200,auto,auto
 
       # autostart
       exec-once = systemctl --user import-environment &
@@ -13,15 +13,15 @@
       exec-once = dbus-update-activation-environment --systemd &
       exec-once = nm-applet &
       exec-once = wl-paste --primary --watch wl-copy --primary --clear
-      exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
-      exec-once = sleep 1 && swaylock
+      # exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
+      # exec-once = sleep 1 && swaylock
       exec-once = hyprctl setcursor Nordzy-cursors 22 &
       exec-once = waybar &
       exec-once = mako &
 
       input {
         kb_layout = us
-        numlock_by_default = true
+        numlock_by_default = false
         follow_mouse = 1
         sensitivity = 0
       }
@@ -45,7 +45,7 @@
         border_size = 2
         col.active_border = rgb(cba6f7) rgb(94e2d5) 45deg
         col.inactive_border = 0x00000000
-        border_part_of_window = true
+        # border_part_of_window = true
 
         # gaps_in = 5
         # gaps_out = 10
