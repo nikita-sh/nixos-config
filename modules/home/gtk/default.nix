@@ -1,5 +1,7 @@
 { pkgs, ... }:
-{
+let
+  gbox-gtk = import ../themes/gruvbox/default.nix { inherit pkgs; };
+in {
   fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.nerdfonts
@@ -19,8 +21,8 @@
       package = pkgs.papirus-icon-theme;
     };
     theme = {
-      name = "Gruvbox Dark";
-      package = pkgs.gruvbox-dark-gtk;
+      name = "Gruvbox-Dark-BL";
+      package = gbox-gtk;
       # package = pkgs.catppuccin-gtk.override {
       #   accents = [ "lavender" ];
       #   size = "compact";
@@ -34,6 +36,8 @@
       size = 22;
     };
   };
+
+  
   
   home.pointerCursor = {
     name = "Nordzy-cursors";
