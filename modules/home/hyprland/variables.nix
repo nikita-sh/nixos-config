@@ -23,6 +23,7 @@
     XDG_SESSION_TYPE = "wayland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
-    GTK_THEME = "Gruvbox Dark";
+    # GTK_THEME = "Gruvbox Dark";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 }

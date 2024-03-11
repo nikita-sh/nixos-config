@@ -12,7 +12,7 @@
 
     settings = {
       confirm_os_window_close = 0;
-      background_opacity = "0.55";  
+      background_opacity = "0.7";  
       window_padding_width = 0;
       scrollback_lines = 10000;
       enable_audio_bell = false;
@@ -22,10 +22,10 @@
       tab_title_template = "{index}";
       active_tab_font_style = "normal";
       inactive_tab_font_style = "normal";
-      active_tab_foreground = "#1e1e2e";
-      active_tab_background = "#cba6f7";
-      inactive_tab_foreground = "#bac2de";
-      inactive_tab_background = "#313244";
+      active_tab_foreground = "#ebdbb2";
+      active_tab_background = "#d65d0e";
+      inactive_tab_foreground = "#282828";
+      inactive_tab_background = "#ebdbb2";
     };
 
     keybindings = {  

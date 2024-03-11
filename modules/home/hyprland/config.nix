@@ -4,8 +4,8 @@
     extraConfig = ''
       $mainMod = SUPER
 
-      monitor=,preferred,auto,auto
-      # monitor=,1920x1200,auto,auto
+      monitor=,preferred,0x0,1
+      monitor=,3840x2400,0x0,1
 
       # autostart
       exec-once = systemctl --user import-environment &
@@ -13,13 +13,12 @@
       exec-once = dbus-update-activation-environment --systemd &
       exec-once = nm-applet &
       exec-once = wl-paste --primary --watch wl-copy --primary --clear
-      # exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
+      exec-once = swaybg -m fill -i ~/dev/nixos-config/wallpapers/city.jpg &
       exec-once = sleep 1 && swaylock
       exec-once = hyprctl setcursor Nordzy-cursors 22 &
       exec-once = waybar &
       exec-once = mako &
 
-      
       xwayland {
         force_zero_scaling = false
       }
@@ -29,7 +28,7 @@
           kb_options = grp:win_space_toggle
           follow_mouse = 1
           repeat_rate = 30
-          repeat_delay = 500
+          repeat_delay = 300
       }
       
       general {
@@ -123,7 +122,7 @@
       bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
       bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
       bind = $mainMod SHIFT, W, exec, vm-start
-      bind = $mainMod, S, exec, hypercrtl dispatch exec '[workspace 4 silent]' slack
+      bind = $mainMod, S, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent]' slack
       
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
