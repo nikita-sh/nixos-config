@@ -3,6 +3,7 @@
   # imports = [ inputs.nix-gaming.nixosModules.default ];
   nix = {
     settings = {
+      trusted-users = [ "nikita" ];
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
       substituters = [ "https://nix-gaming.cachix.org" ];
@@ -13,6 +14,25 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+    distributedBuilds = true;
+    # https://github.com/nix-community/nix-direnv
+    extraOptions = ''
+      builders-use-substitutes = true
+      keep-outputs = true
+      keep-derivations = true
+    '';
+    buildMachines = [
+      {
+        hostName = "hydra-aarch64.vital.company";
+        sshUser = "nikita";
+        sshKey = "/home/nikita/.ssh/id_rsa";
+        system = "aarch64-linux";
+        maxJobs = 4;
+        speedFactor = 2;
+        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+        mandatoryFeatures = [ ];
+      }
+    ];
   };
   nixpkgs = {
     overlays = [
