@@ -52,6 +52,7 @@
     pstree
     qemu
     rustc
+    starfetch
     slack
     spotify
     zoom-us
