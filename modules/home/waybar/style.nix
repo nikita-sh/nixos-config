@@ -56,6 +56,7 @@ window#waybar {
   background: #665c54;
 }
 
+#battery,
 #pulseaudio,
 #temperature,
 #cpu,
@@ -82,6 +83,11 @@ window#waybar {
   margin-top: 4px;
   margin-bottom: 4px;
   border-radius: 0px;
+}
+
+#battery {
+  padding: 0 0.6em;
+  margin-right: 4px;
 }
 
 #tray {
