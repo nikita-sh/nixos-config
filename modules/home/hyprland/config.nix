@@ -85,9 +85,9 @@
       }
       
       misc {
-          disable_hyprland_logo = true
-          animate_manual_resizes = true
-          disable_autoreload = false 
+        disable_hyprland_logo = true
+        animate_manual_resizes = true
+        disable_autoreload = false 
       	enable_swallow = true
       	animate_mouse_windowdragging = true
       	layers_hog_keyboard_focus = true
@@ -123,6 +123,8 @@
       bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
       bind = $mainMod SHIFT, W, exec, vm-start
       bind = $mainMod, S, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent]' slack
+      bind=,XF86MonBrightnessDown,exec,brightnessctl set 10%-
+      bind=,XF86MonBrightnessUp,exec,brightnessctl set +10%
       
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png

@@ -53,7 +53,8 @@
     qemu
     rustc
     starfetch
-    slack
+    # slack
+    # spicetify
     spotify
     zoom-us
   ]);

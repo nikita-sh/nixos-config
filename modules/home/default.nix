@@ -15,6 +15,7 @@
     ++ [(import ./nvim)]
     ++ [(import ./package)]
     ++ [(import ./scripts)]         # personal scripts
+    ++ [(import ./slack)]
     # ++ [(import ./starship)]
     ++ [(import ./swaylock)]
     ++ [(import ./waybar)]
