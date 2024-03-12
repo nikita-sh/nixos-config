@@ -8,8 +8,8 @@
     # modules-center = ["hyprland/window"];
     # modules-right = ["idle_inhibitor" "pulseaudio" "network" "cpu" "memory" "battery" "tray" "clock"];
     height = 20;
-    modules-left = ["hyprland/workspaces" "custom/media" "hyprland/window"];
-    modules-right = ["disk#root" "cpu" "memory" "network" "battery"  "clock" "pulseaudio" "idle_inhibitor" "tray" ];
+    modules-left = ["hyprland/workspaces" "custom/media" "idle_inhibitor" "hyprland/window"];
+    modules-right = ["disk#root" "cpu" "memory" "network" "battery"  "clock" "pulseaudio" "tray" ];
     "hyprland/workspaces" = {
         disable-scroll = true;
         all-outputs = true;
@@ -190,7 +190,7 @@
 
     pulseaudio = {
         # "scroll-step" = 1;
-        format = "{volume}% {icon}";
+        format = "{volume}% {icon} ";
         format-bluetooth = "{volume}% {icon}";
         format-muted = "";
         format-icons = {
