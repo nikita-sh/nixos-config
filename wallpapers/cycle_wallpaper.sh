@@ -7,6 +7,6 @@ while true; do
     # NEXT_PID=$!
     sleep 1
     # kill $OLD_PID
-    sleep 3600
+    sleep 1800
     # OLD_PID=$NEXT_PID
 done
