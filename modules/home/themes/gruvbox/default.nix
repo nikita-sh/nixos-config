@@ -21,6 +21,7 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out/share
     cp -r $src/themes $out/share/
+    cp -r $src/icons $out/share/
   '';
   
   meta = with pkgs.lib; {

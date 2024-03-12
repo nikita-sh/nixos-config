@@ -13,11 +13,12 @@
       exec-once = dbus-update-activation-environment --systemd &
       exec-once = nm-applet &
       exec-once = wl-paste --primary --watch wl-copy --primary --clear
-      exec-once = swaybg -m fill -i ~/dev/nixos-config/wallpapers/city.jpg &
+      # exec-once = swaybg -m fill -i ~/dev/nixos-config/wallpapers/city.jpg &
       exec-once = sleep 1 && swaylock
       exec-once = hyprctl setcursor Nordzy-cursors 22 &
       exec-once = waybar &
       exec-once = mako &
+      exec-once = /home/nikita/dev/nixos-config/wallpapers/cycle_wallpaper.sh &
 
       xwayland {
         force_zero_scaling = false

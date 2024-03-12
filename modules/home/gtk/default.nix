@@ -16,10 +16,17 @@ in {
       name = "FiraCode";
       size = 11;
     };
+
+    # iconTheme = {
+    #   name = "Papirus-Dark";
+    #   package = pkgs.papirus-icon-theme;
+    # };
+
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Gruvbox-Dark";
+      package = gbox-gtk;
     };
+
     theme = {
       name = "Gruvbox-Dark-BL";
       package = gbox-gtk;
