@@ -2,7 +2,7 @@
 
 init() {
     # Vars
-    CURRENT_USERNAME='frostphoenix'
+    CURRENT_USERNAME='nikita'
 
     # Colors
     NORMAL=$(tput sgr0)
@@ -70,16 +70,10 @@ install() {
     echo -e "Creating folders:"
     echo -e "    - ${MAGENTA}~/Music${NORMAL}"
     echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
-    echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
+    echo -e "    - ${MAGENTA}~/dev${NORMAL}"
     mkdir -p ~/Music
     mkdir -p ~/Documents
-    mkdir -p ~/Pictures/wallpapers/others
-    sleep 0.2
-
-    # Copy the wallpapers
-    echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
-    cp wallpapers/wallpaper.png ~/Pictures/wallpapers
-    cp wallpapers/otherWallpaper/* ~/Pictures/wallpapers/others/
+    mkdir -p ~/dev
     sleep 0.2
 
     # Get the hardware configuration

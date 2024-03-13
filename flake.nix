@@ -30,18 +30,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # catppuccin-bat = {
-    #   url = "github:catppuccin/bat";
-    #   flake = false;
-    # };
-    # catppuccin-cava = {
-    #   url = "github:catppuccin/cava";
-    #   flake = false;
-    # };
-    # catppuccin-starship = {
-    #   url = "github:catppuccin/starship";
-    #   flake = false;
-    # };
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
 
   };
 
@@ -50,6 +39,7 @@
     home-manager,
     NixOS-WSL,
     nixpkgs,
+    spicetify-nix,
     self,
     ...
   } @ inputs:

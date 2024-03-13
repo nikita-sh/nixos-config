@@ -20,5 +20,6 @@
     ++ [(import ./swaylock)]
     ++ [(import ./waybar)]
     ++ [(import ./wofi)]
+    ++ [(import ./spicetify)]
     ++ [(import ./zsh)];
 }
