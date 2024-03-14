@@ -126,6 +126,9 @@
       bind = $mainMod, S, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent]' slack
       bind=,XF86MonBrightnessDown,exec,brightnessctl set 10%-
       bind=,XF86MonBrightnessUp,exec,brightnessctl set +10%
+      bind=,XF86Messenger,exec,playerctl previous
+      bind=,XF86Go,exec,playerctl play-pause
+      bind=,Cancel,exec,playerctl next
       
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
