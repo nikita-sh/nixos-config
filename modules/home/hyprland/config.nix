@@ -244,6 +244,8 @@
       windowrulev2 = float,title:^(branchdialog)$
       windowrulev2 = float,title:^(Confirm to replace files)$
       windowrulev2 = float,title:^(File Operation Progress)$
+
+      windowrule = float,Calendar
     '';
   };
 }

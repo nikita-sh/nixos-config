@@ -1,6 +1,7 @@
 {inputs, username, ...}: {
   imports =
     [(import ./bat)]
+    ++ [(import ./lsd)]
     ++ [(import ./btop)]
     ++ [(import ./cava)]
     ++ [(import ./discord)]         # discord with catppuccin theme

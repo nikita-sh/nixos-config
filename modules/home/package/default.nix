@@ -64,5 +64,6 @@
     # gnome-control-center
     gnome-weather
     gnome-calculator
+    nautilus
   ]);
 }

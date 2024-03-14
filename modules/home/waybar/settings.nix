@@ -57,6 +57,7 @@
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       format = "{:%I:%M %p}";
       format-alt = "{:%Y-%m-%d}";
+      on-right-click = "gnome-calendar";
     };
 
     "idle_inhibitor" = {
