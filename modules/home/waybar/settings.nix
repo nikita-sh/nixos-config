@@ -33,9 +33,9 @@
           warning = 30;
           critical = 15;
       };
-      format = "{capacity}%";
-      format-charging = "{capacity}% 󱐋";
-      format-plugged = "{capacity}% ";
+      format = "{capacity}% ";
+      format-charging = "{capacity}% 󱐋 ";
+      format-plugged = "{capacity}%  ";
       format-alt = "{time} {icon}";
       # "format-good" = "", // An empty format will hide the module
       # "format-full" = "";
@@ -192,7 +192,7 @@
     pulseaudio = {
         # "scroll-step" = 1;
         format = "{volume}% {icon} ";
-        format-bluetooth = "{volume}% {icon}";
+        format-bluetooth = "{volume}% {icon}  ";
         format-muted = "";
         format-icons = {
             headphones = "";
