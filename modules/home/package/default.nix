@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }: 
 {
-  home.packages = (with pkgs; [
-    ani-cli
+  home.packages = (with pkgs; with gnome; [
+    ani-cli                           # animu
     bitwise                           # cli tool for bit / hex manipulation
     eza                               # ls replacement
     entr                              # perform action when file change
@@ -55,5 +55,14 @@
     rustc
     starfetch
     zoom-us
+    
+    # gnome stuff
+    gnome-text-editor
+    gnome-calendar
+    gnome-boxes
+    gnome-system-monitor
+    # gnome-control-center
+    gnome-weather
+    gnome-calculator
   ]);
 }
