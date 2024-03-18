@@ -3,20 +3,17 @@
   home.packages = (with pkgs; with gnome; [
     ani-cli                           # animu
     bitwise                           # cli tool for bit / hex manipulation
-    eza                               # ls replacement
     entr                              # perform action when file change
     file                              # Show file information 
+    delta
     fzf                               # fuzzy finder
-    jdk17                             # java
     lazygit
-    libreoffice
     nitch                             # systhem fetch util
     nix-prefetch-github
     pipx                              # Install Python applications in isolated environments
     prismlauncher                     # minecraft launcher
     ripgrep                           # grep replacement
     rnix-lsp
-    soundwireserver                   # pass audio to android phone
     todo                              # cli todo list
     toipe                             # typing test in the terminal
     cinnamon.nemo-with-extensions     # file manager
@@ -57,13 +54,7 @@
     zoom-us
     
     # gnome stuff
-    gnome-text-editor
-    gnome-calendar
-    gnome-boxes
-    gnome-system-monitor
-    # gnome-control-center
     gnome-weather
     gnome-calculator
-    nautilus
   ]);
 }
