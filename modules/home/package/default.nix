@@ -38,6 +38,7 @@
     pamixer                           # pulseaudio command line mixer
     pavucontrol                       # pulseaudio volume controle (GUI)
     playerctl                         # controller for media players
+    httpie
     qalculate-gtk                     # calculator
     unzip
     wget
