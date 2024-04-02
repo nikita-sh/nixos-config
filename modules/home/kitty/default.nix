@@ -34,6 +34,7 @@
       "alt+2" = "goto_tab 2";
       "alt+3" = "goto_tab 3";
       "alt+4" = "goto_tab 4";
+      "alt+5" = "goto_tab 5";
 
       ## Unbind
       # "ctrl+shift+left" = "no_op";
