@@ -53,7 +53,8 @@
     rustc
     starfetch
     zoom-us
-    
+    sway-contrib.grimshot
+ 
     # gnome stuff
     gnome-weather
     gnome-calculator

@@ -129,6 +129,7 @@
       bind=,XF86Messenger,exec,playerctl previous
       bind=,XF86Go,exec,playerctl play-pause
       bind=,Cancel,exec,playerctl next
+      bind = $mainMod SHIFT, S, exec, grimshot copy window
       
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png

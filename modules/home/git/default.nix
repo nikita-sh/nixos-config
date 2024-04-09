@@ -26,6 +26,7 @@
       d = "diff";
       rl = "reflog";
       m = "merge";
+      rb = "rebase";
     };
     extraConfig = {
       core.editor = "$EDITOR";
