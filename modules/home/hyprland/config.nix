@@ -111,7 +111,7 @@
       bind = $mainMod SHIFT, F, fullscreen, 1
       bind = $mainMod, Space, togglefloating,
       bind = $mainMod, D, exec, pkill wofi || wofi --show drun --normal-window
-      bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord'
+      bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind = $mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'
       bind = $mainMod, Escape, exec, swaylock
       bind = $mainMod SHIFT, Escape, exec, shutdown-script
