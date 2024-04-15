@@ -1,6 +1,8 @@
 { inputs, pkgs, ... }: 
 {
   home.packages = (with pkgs; with gnome; [
+    _1password                        # 1password cli + gui
+    _1password-gui
     ani-cli                           # animu
     bitwise                           # cli tool for bit / hex manipulation
     entr                              # perform action when file change
