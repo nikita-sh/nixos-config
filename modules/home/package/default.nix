@@ -15,7 +15,6 @@
     pipx                              # Install Python applications in isolated environments
     prismlauncher                     # minecraft launcher
     ripgrep                           # grep replacement
-    rnix-lsp
     todo                              # cli todo list
     toipe                             # typing test in the terminal
     cinnamon.nemo-with-extensions     # file manager
@@ -60,5 +59,8 @@
     # gnome stuff
     gnome-weather
     gnome-calculator
+
+    xwaylandvideobridge
+    screen
   ]);
 }

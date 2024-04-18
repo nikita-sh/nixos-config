@@ -4,8 +4,8 @@
     extraConfig = ''
       $mainMod = SUPER
 
-      monitor=,preferred,0x0,1
-      monitor=,3840x2400,0x0,2
+      monitor=,preferred,0x0,1,bitdepth,10
+      monitor=,3840x2400,0x0,2,bitdepth,10
 
       # autostart
       exec-once = systemctl --user import-environment &
@@ -111,8 +111,8 @@
       bind = $mainMod SHIFT, F, fullscreen, 1
       bind = $mainMod, Space, togglefloating,
       bind = $mainMod, D, exec, pkill wofi || wofi --show drun --normal-window
-      bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
-      bind = $mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'
+      bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 5 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 6 silent] SoundWireServer'
       bind = $mainMod, Escape, exec, swaylock
       bind = $mainMod SHIFT, Escape, exec, shutdown-script
       bind = $mainMod, P, pseudo,
@@ -123,7 +123,8 @@
       bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
       bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
       bind = $mainMod SHIFT, W, exec, vm-start
-      bind = $mainMod, S, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent]' slack
+      bind = $mainMod, S, exec, hyprctl dispatch exec '[workspace 3 silent] slack --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod, M, exec, hyprctl dispatch exec '[workspace 4 silent] spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind =,XF86MonBrightnessDown,exec,brightnessctl set 10%-
       bind =,XF86MonBrightnessUp,exec,brightnessctl set +10%
       bind =,XF86Messenger,exec,playerctl previous
@@ -248,6 +249,12 @@
       windowrulev2 = float,title:^(File Operation Progress)$
 
       windowrule = float,Calendar
+
+      windowrulev2 = opacity 0.0 override,class:^(xwaylandvideobridge)$
+      windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+      windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
+      windowrulev2 = maxsize 1 1,class:^(xwaylandvideobridge)$
+      windowrulev2 = noblur,class:^(xwaylandvideobridge)$
     '';
   };
 }
