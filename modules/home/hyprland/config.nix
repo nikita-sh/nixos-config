@@ -124,12 +124,13 @@
       bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
       bind = $mainMod SHIFT, W, exec, vm-start
       bind = $mainMod, S, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent]' slack
-      bind=,XF86MonBrightnessDown,exec,brightnessctl set 10%-
-      bind=,XF86MonBrightnessUp,exec,brightnessctl set +10%
-      bind=,XF86Messenger,exec,playerctl previous
-      bind=,XF86Go,exec,playerctl play-pause
-      bind=,Cancel,exec,playerctl next
+      bind =,XF86MonBrightnessDown,exec,brightnessctl set 10%-
+      bind =,XF86MonBrightnessUp,exec,brightnessctl set +10%
+      bind =,XF86Messenger,exec,playerctl previous
+      bind =,XF86Go,exec,playerctl play-pause
+      bind =,Cancel,exec,playerctl next
       bind = $mainMod SHIFT, S, exec, grimshot copy window
+      bind = $mainMod SHIFT, C, exec, ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh && (sleep 1; kill -9 "$!") &
       
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
