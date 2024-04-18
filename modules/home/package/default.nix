@@ -62,5 +62,6 @@
 
     xwaylandvideobridge
     screen
+    jq
   ]);
 }
