@@ -130,7 +130,7 @@
       bind =,XF86Go,exec,playerctl play-pause
       bind =,Cancel,exec,playerctl next
       bind = $mainMod SHIFT, S, exec, grimshot copy window
-      bind = $mainMod SHIFT, C, exec, ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh && (sleep 1; kill -9 "$!") &
+      bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh &
       
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
