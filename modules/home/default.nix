@@ -5,7 +5,7 @@
     ++ [(import ./btop)]
     ++ [(import ./cava)]
     ++ [(import ./discord)]         # discord with catppuccin theme
-    ++ [(import ./floorp)]          # firefox based browser
+#     ++ [(import ./floorp)]          # firefox based browser
     ++ [(import ./gaming)]
     ++ [(import ./git)]
     ++ [(import ./gtk)]
