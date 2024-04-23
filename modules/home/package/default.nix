@@ -22,9 +22,13 @@
     youtube-dl
     gnome.zenity
 
-    # C / C++
+    # languages
     gcc
     gnumake
+    rustc
+    cargo
+    flutter
+    go
 
     bleachbit                         # cache cleaner
     cmatrix
@@ -32,7 +36,7 @@
     ffmpeg
     imv                               # image viewer
     libnotify
-	  man-pages					            	  # extra man pages
+	  man-pages                         # extra man pages
     mpv                               # video player
     ncdu                              # disk space
     openssl
@@ -45,13 +49,11 @@
     wget
     xdg-utils
     inputs.alejandra.defaultPackage.${system}
-    cargo
     direnv
     nmap
     neofetch
     pstree
     qemu
-    rustc
     starfetch
     zoom-us
     sway-contrib.grimshot
