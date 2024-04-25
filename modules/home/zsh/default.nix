@@ -49,6 +49,7 @@
       nvim = "nix run /home/nikita/dev/nixos-config#neovim --";
       s = "kitten ssh";
       diff = "delta";
+      t = "task";
 
       # Nixos
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";

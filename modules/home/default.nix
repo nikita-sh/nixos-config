@@ -15,6 +15,7 @@
     ++ [(import ./micro)]           # nano replacement
     ++ [(import ./nvim)]
     ++ [(import ./package)]
+    ++ [(import ./taskwarrior)]
     ++ [(import ./scripts)]         # personal scripts
     ++ [(import ./slack)]
     # ++ [(import ./starship)]

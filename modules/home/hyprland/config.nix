@@ -19,6 +19,7 @@
       exec-once = waybar &
       exec-once = mako &
       exec-once = /home/nikita/dev/nixos-config/wallpapers/cycle_wallpaper.sh &
+      exec-once = calcurse --daemon
 
       xwayland {
         force_zero_scaling = false

@@ -64,5 +64,7 @@
     screen
     jq
     firefox
+    calcurse
+    vim                              # just in case
   ]);
 }
