@@ -50,6 +50,7 @@
       s = "kitten ssh";
       diff = "delta";
       t = "task";
+      gpt = "chatgpt";
 
       # Nixos
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";

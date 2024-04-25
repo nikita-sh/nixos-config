@@ -4,6 +4,7 @@
     ++ [(import ./lsd)]
     ++ [(import ./btop)]
     ++ [(import ./cava)]
+    ++ [(import ./chatgpt-cli)]
     ++ [(import ./discord)]         # discord with catppuccin theme
 #     ++ [(import ./floorp)]          # firefox based browser
     ++ [(import ./gaming)]
