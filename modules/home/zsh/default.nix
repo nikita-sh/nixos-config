@@ -1,5 +1,4 @@
-{ hostname, config, pkgs, ...}: 
-{
+{ hostname, config, pkgs, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -57,28 +56,30 @@
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
       nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
-      nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
+      nix-switchu =
+        "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
-      nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
+      nix-clean =
+        "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
       # Git
-      ga   = "git add";
-      gaa  = "git add --all";
-      gs   = "git status";
-      gb   = "git branch";
-      gm   = "git merge";
-      gpl  = "git pull";
+      ga = "git add";
+      gaa = "git add --all";
+      gs = "git status";
+      gb = "git branch";
+      gm = "git merge";
+      gpl = "git pull";
       gplo = "git pull origin";
-      gps  = "git push";
+      gps = "git push";
       gpst = "git push --follow-tags";
       gpso = "git push origin";
-      gc   = "git commit";
-      gcm  = "git commit -m";
+      gc = "git commit";
+      gcm = "git commit -m";
       gtag = "git tag -ma";
-      gch  = "git checkout";
+      gch = "git checkout";
       gchb = "git checkout -b";
       gcoe = "git config user.email";
       gcon = "git config user.name";

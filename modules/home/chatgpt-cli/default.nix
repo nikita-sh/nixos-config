@@ -1,4 +1,1 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [chatgpt-cli];
-}
+{ pkgs, ... }: { home.packages = with pkgs; [ chatgpt-cli ]; }

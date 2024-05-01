@@ -1,6 +1,5 @@
 { pkgs, ... }:
-let
-  gbox-gtk = import ../themes/gruvbox/default.nix { inherit pkgs; };
+let gbox-gtk = import ../themes/gruvbox/default.nix { inherit pkgs; };
 in {
   fonts.fontconfig.enable = true;
   home.packages = [
@@ -44,8 +43,6 @@ in {
     };
   };
 
-  
-  
   home.pointerCursor = {
     name = "Nordzy-cursors";
     package = pkgs.nordzy-cursor-theme;

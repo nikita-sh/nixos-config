@@ -1,6 +1,1 @@
-{...}:
-{
-  programs.delta = {
-    enable = true;
-  };
-}
+{ ... }: { programs.delta = { enable = true; }; }

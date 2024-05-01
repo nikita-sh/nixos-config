@@ -1,5 +1,4 @@
-{ self, pkgs, lib, inputs, ...}: 
-{
+{ self, pkgs, lib, inputs, ... }: {
   # imports = [ inputs.nix-gaming.nixosModules.default ];
   nix = {
     settings = {
@@ -7,7 +6,9 @@
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
       substituters = [ "https://nix-gaming.cachix.org" ];
-      trusted-public-keys = [ "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4=" ];
+      trusted-public-keys = [
+        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
+      ];
     };
     gc = {
       automatic = true;
@@ -21,30 +22,20 @@
       keep-outputs = true
       keep-derivations = true
     '';
-    buildMachines = [
-      {
-        hostName = "hydra-aarch64.vital.company";
-        sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_rsa";
-        system = "aarch64-linux";
-        maxJobs = 4;
-        speedFactor = 2;
-        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-        mandatoryFeatures = [ ];
-      }
-    ];
+    buildMachines = [{
+      hostName = "hydra-aarch64.vital.company";
+      sshUser = "nikita";
+      sshKey = "/home/nikita/.ssh/id_rsa";
+      system = "aarch64-linux";
+      maxJobs = 4;
+      speedFactor = 2;
+      supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+      mandatoryFeatures = [ ];
+    }];
   };
-  nixpkgs = {
-    overlays = [
-      self.overlays.default
-      inputs.nur.overlay
-    ];
-  };
+  nixpkgs = { overlays = [ self.overlays.default inputs.nur.overlay ]; };
 
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-  ];
+  environment.systemPackages = with pkgs; [ wget git ];
 
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_US.UTF-8";

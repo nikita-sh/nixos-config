@@ -1,10 +1,6 @@
-{ pkgs, inputs, username, ...}:
-let
-  packages = with pkgs; [
-    zsh
-  ];
-in
-{
+{ pkgs, inputs, username, ... }:
+let packages = with pkgs; [ zsh ];
+in {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;

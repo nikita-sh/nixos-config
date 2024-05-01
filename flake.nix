@@ -4,19 +4,19 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-  
+
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
-  
+
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-  
+
     nix-gaming.url = "github:fufexan/nix-gaming";
-  
+
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,15 +34,8 @@
 
   };
 
-  outputs = { 
-    neovim-flake,
-    home-manager,
-    NixOS-WSL,
-    nixpkgs,
-    spicetify-nix,
-    self,
-    ...
-  } @ inputs:
+  outputs = { neovim-flake, home-manager, NixOS-WSL, nixpkgs, spicetify-nix
+    , self, ... }@inputs:
     let
       selfPkgs = import ./pkgs;
       username = "nikita";
@@ -54,11 +47,9 @@
             style = "dark";
             name = "gruvbox";
           };
-          autocomplete = {
-            enable = true;
-          };
+          autocomplete = { enable = true; };
           languages = {
-            haskell = { 
+            haskell = {
               enable = true;
               treesitter.enable = true;
               lsp.enable = true;
@@ -91,26 +82,18 @@
           };
           filetree = {
             nvimTreeLua = {
-                enable = true;
-                openTreeOnNewTab = true;
-                disableNetRW = true;
+              enable = true;
+              openTreeOnNewTab = true;
+              disableNetRW = true;
             };
           };
           git = {
             enable = true;
             gitsigns.enable = true;
           };
-          telescope = {
-            enable = true;
-          };
-          autopairs = {
-            enable = true;
-          };
-          statusline = {
-            lualine = {
-                enable = true;
-            };
-          };
+          telescope = { enable = true; };
+          autopairs = { enable = true; };
+          statusline = { lualine = { enable = true; }; };
           visuals = {
             enable = true;
             cursorWordline.enable = true;
@@ -121,20 +104,20 @@
             };
           };
         };
-    };
-    
-    pkgs = nixpkgs.legacyPackages.${"x86_64-linux"};
-    customNeovim = neovim-flake.lib.neovimConfiguration {
-        modules = [configModule];
-        inherit pkgs;
-    }; 
-  in {
-    # build nvim
-    packages.${"x86_64-linux"}.neovim = customNeovim;
+      };
 
-    overlays.default = selfPkgs.overlay;
-    nixosConfigurations = import ./modules/core/default.nix {
-      inherit self nixpkgs inputs username hname;
+      pkgs = nixpkgs.legacyPackages.${"x86_64-linux"};
+      customNeovim = neovim-flake.lib.neovimConfiguration {
+        modules = [ configModule ];
+        inherit pkgs;
+      };
+    in {
+      # build nvim
+      packages.${"x86_64-linux"}.neovim = customNeovim;
+
+      overlays.default = selfPkgs.overlay;
+      nixosConfigurations = import ./modules/core/default.nix {
+        inherit self nixpkgs inputs username hname;
+      };
     };
-  };
 }

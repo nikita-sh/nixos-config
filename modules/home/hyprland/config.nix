@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   wayland.windowManager.hyprland = {
     extraConfig = ''
       $mainMod = SUPER
@@ -24,7 +23,7 @@
       xwayland {
         force_zero_scaling = false
       }
- 
+
       input {
           kb_layout = us
           kb_options = grp:win_space_toggle

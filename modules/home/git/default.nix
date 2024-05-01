@@ -1,8 +1,7 @@
-{ pkgs, ... }: 
-{
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
-    
+
     userName = "Nikita Shumeiko";
     userEmail = "nikita.shumeiko@vitalbio.com";
     aliases = {
@@ -16,7 +15,7 @@
       st = "stash";
       pfwl = "push --force-with-lease";
       co = "checkout";
-	    cob = "checkout -b";
+      cob = "checkout -b";
       r = "rebase";
       rbi = "rebase -i";
       a = "add";
@@ -34,10 +33,10 @@
       interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
       add.interactive.useBuiltin = false;
       delta = {
-          features = "chameleon";
-          side-by-side = false;
-          navigate = true;
-          light = false;
+        features = "chameleon";
+        side-by-side = false;
+        navigate = true;
+        light = false;
       };
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
