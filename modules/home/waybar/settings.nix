@@ -95,8 +95,8 @@
       interval = 1;
       tooltip = false;
       format-wifi = "<span foreground='#d79921'>{icon}</span>Connected<span foreground='#d79921'>  </span>{bandwidthUpBytes}<span foreground='#d79921'>  </span>{bandwidthDownBytes} ";
-      format-disconnected = "";
-      format-ethernet = "<span foreground='#d79921'>   </span>Wired  <span foreground='#d79921'>   </span>{bandwidthUpBytes}  <span foreground='#d79921'>   </span>{bandwidthDownBytes}";
+      format-disconnected = "󰤭";
+      format-ethernet = "<span foreground='#d79921'>󰈀   </span>Wired  <span foreground='#d79921'>   </span>{bandwidthUpBytes}  <span foreground='#d79921'>   </span>{bandwidthDownBytes}";
       on-click-right-release = "alacritty --class nmtui -T 'Network Settings' -e nmtui";
       on-click-release = "$HOME/dev/nixos-config/modules/home/waybar/scripts/net.sh";
       format-icons = [
