@@ -24,7 +24,7 @@
       xwayland {
         force_zero_scaling = false
       }
-      
+ 
       input {
           kb_layout = us
           kb_options = grp:win_space_toggle
@@ -32,7 +32,7 @@
           repeat_rate = 30
           repeat_delay = 300
       }
-      
+
       general {
         gaps_in = 5
         gaps_out = 10
@@ -44,7 +44,7 @@
         layout = dwindle
       	allow_tearing = true
       }
-      
+
       decoration {
           rounding = 0
           blur {
@@ -60,13 +60,13 @@
           shadow_render_power = 1
       	shadow_ignore_window = true
       	col.shadow = rgb(313131)
-      
+
       	dim_inactive = true
       	dim_strength = 0.10
       	dim_special = 0.3
-      
+
       }
-      
+
       animations { 
       	enabled = no
       	bezier = workspace,0.17, 1.17, 0.3,1
@@ -80,12 +80,12 @@
       	animation = specialWorkspace, 1, 5, workspace, slidefadevert 10%
       	# first_launch_animation = true
       }
-      
-      
+
+
       binds {
           allow_workspace_cycles = true
       }
-      
+
       misc {
         disable_hyprland_logo = true
         animate_manual_resizes = true
@@ -98,7 +98,7 @@
       }
 
       # ----------------------------------------------------------------
-      
+
       # show keybinds list
       bind = $mainMod, F1, exec, show-keybinds
 
@@ -133,17 +133,17 @@
       # bind = $mainMod SHIFT, S, exec, grimshot copy window
       bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh &
       bind = $mainMod SHIFT, M, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent] spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
-      
+
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
       bind = ,Print, exec, grimblast --notify --cursor  copy area
-      
+
       # switch focus
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
-      
+
       # switch workspace
       bind = $mainMod, 1, workspace, 1
       bind = $mainMod, 2, workspace, 2
@@ -155,7 +155,7 @@
       bind = $mainMod, 8, workspace, 8
       bind = $mainMod, 9, workspace, 9
       bind = $mainMod, 0, workspace, 10
-      
+
       # same as above, but switch to the workspace
       bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1     # movetoworkspacesilent
       bind = $mainMod SHIFT, 2, movetoworkspacesilent, 2
@@ -168,7 +168,7 @@
       bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
       bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
       bind = $mainMod CTRL, c, movetoworkspace, empty
-      
+
       # window control
       bind = $mainMod SHIFT, left, movewindow, l
       bind = $mainMod SHIFT, right, movewindow, r
@@ -182,7 +182,7 @@
       bind = $mainMod ALT, right, moveactive, 80 0
       bind = $mainMod ALT, up, moveactive, 0 -80
       bind = $mainMod ALT, down, moveactive, 0 80
-      
+
       # media and volume controls
       bind = ,XF86AudioRaiseVolume,exec, pamixer -i 2
       bind = ,XF86AudioLowerVolume,exec, pamixer -d 2
@@ -193,11 +193,11 @@
       bind = , XF86AudioStop, exec, playerctl stop
       bind = $mainMod, mouse_down, workspace, e-1
       bind = $mainMod, mouse_up, workspace, e+1
-      
+
       # mouse binding
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
-      
+
       # windowrule
       windowrule = float,audacious
       windowrule = workspace 8 silent, audacious
@@ -230,7 +230,7 @@
       windowrule = size 1200 725,mpv
       windowrulev2 = idleinhibit focus, class:^(mpv)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
-    
+
       windowrule = float,title:^(float_kitty)$
       windowrule = center,title:^(float_kitty)$
       windowrule = size 950 600,title:^(float_kitty)$
