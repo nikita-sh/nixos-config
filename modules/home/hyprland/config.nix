@@ -17,7 +17,7 @@
       exec-once = hyprctl setcursor Nordzy-cursors 22 &
       exec-once = waybar &
       exec-once = mako &
-      exec-once = /home/nikita/dev/nixos-config/wallpapers/cycle_wallpaper.sh &
+      exec-once = /home/nikita/dev/nixos-config/wallpapers/cycle_wallpaper.sh 1800 &
       exec-once = calcurse --daemon
 
       xwayland {
@@ -130,7 +130,7 @@
       bind =,XF86Go,exec,playerctl play-pause
       bind =,Cancel,exec,playerctl next
       # bind = $mainMod SHIFT, S, exec, grimshot copy window
-      bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh &
+      bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh 1800 &
       bind = $mainMod SHIFT, M, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent] spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
       # screenshot
