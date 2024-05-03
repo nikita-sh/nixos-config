@@ -20,7 +20,7 @@ in {
       ++ [ (import ./probe-rs.nix) ] ++ [
         (import ./vpn.nix)
       ]
-      # ++ [ (import ./virtualization.nix) ]
+      ++ [ (import ./virtualization.nix) ]
       ++ [ (import ./../../hosts/nixos/hardware-configuration.nix) ];
   };
 
