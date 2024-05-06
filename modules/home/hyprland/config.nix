@@ -229,6 +229,7 @@
       windowrule = size 1200 725,mpv
       windowrulev2 = idleinhibit focus, class:^(mpv)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
+      windowrulev2 = float,class:^(blueman-manager)$
 
       windowrule = float,title:^(float_kitty)$
       windowrule = center,title:^(float_kitty)$
