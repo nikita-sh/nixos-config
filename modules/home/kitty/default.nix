@@ -34,6 +34,10 @@
       "alt+3" = "goto_tab 3";
       "alt+4" = "goto_tab 4";
       "alt+5" = "goto_tab 5";
+      "alt+6" = "goto_tab 5";
+      "alt+7" = "goto_tab 5";
+      "alt+8" = "goto_tab 5";
+      "alt+9" = "goto_tab 5";
 
       ## Unbind
       # "ctrl+shift+left" = "no_op";
