@@ -50,6 +50,7 @@
       diff = "delta";
       t = "task";
       gpt = "chatgpt";
+      nf = "neofetch";
 
       # Nixos
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
