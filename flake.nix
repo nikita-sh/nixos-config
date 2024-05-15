@@ -40,6 +40,10 @@
           };
           autocomplete = { enable = true; };
           languages = {
+            terraform = {
+              enable = true;
+              treesitter.enable = true;
+            };
             haskell = {
               enable = true;
               treesitter.enable = true;
