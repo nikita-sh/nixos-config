@@ -21,7 +21,7 @@
     #   nerdfonts
     # ];
 
-    programs.ssh.startAgent = true;
+    # programs.ssh.startAgent = true;
 
     security.pki.certificates = [''
       Vital internal-ca

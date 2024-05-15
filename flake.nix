@@ -4,34 +4,25 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
-
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-
     nix-gaming.url = "github:fufexan/nix-gaming";
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # neovim
     neovim-flake.url = "github:nikita-sh/neovim-flake";
-
     NixOS-WSL = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-
   };
 
   outputs = { neovim-flake, home-manager, NixOS-WSL, nixpkgs, spicetify-nix
