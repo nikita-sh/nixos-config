@@ -66,5 +66,6 @@
       firefox
       calcurse
       vim # just in case
+      probe-rs
     ]);
 }
