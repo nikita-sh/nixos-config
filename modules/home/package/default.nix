@@ -68,5 +68,6 @@
       vim # just in case
       probe-rs
       balena-cli
+      bitwarden
     ]);
 }

@@ -2,7 +2,8 @@
   wayland.windowManager.hyprland = {
     extraConfig = ''
       $mainMod = SUPER
-
+      
+      # monitor=,preferred,auto,1
       monitor=,preferred,0x0,1
       monitor=,3840x2400,0x0,2
 
@@ -111,7 +112,7 @@
       bind = $mainMod SHIFT, F, fullscreen, 1
       bind = $mainMod, Space, togglefloating,
       bind = $mainMod, D, exec, pkill wofi || wofi --show drun --normal-window
-      bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 6 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind = $mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'
       bind = $mainMod, Escape, exec, swaylock
       bind = $mainMod SHIFT, Escape, exec, shutdown-script
@@ -132,6 +133,7 @@
       # bind = $mainMod SHIFT, S, exec, grimshot copy window
       bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh 1800 &
       bind = $mainMod SHIFT, M, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent] spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod SHIFT, O, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 5 silent] obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png

@@ -37,8 +37,14 @@
 
   environment.systemPackages = with pkgs; [ wget git ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
+  };
+
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.05";
 }

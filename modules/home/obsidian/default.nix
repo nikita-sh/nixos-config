@@ -4,9 +4,9 @@
     text = ''
       ${pkgs.obsidian}/bin/obsidian --use-angle=opengl "$@"
     '';
-    derivationArgs.postCheck = ''
-      ln -s ${pkgs.obsidian}/share $out/share
-    '';
+    # derivationArgs.postCheck = ''
+    #   ln -s ${pkgs.obsidian}/share $out/share
+    # '';
   };
 in {
   home.packages = [obsidianWrapper];
