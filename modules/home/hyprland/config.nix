@@ -4,7 +4,7 @@
       $mainMod = SUPER
       
       # monitor=,preferred,auto,1
-      monitor=,preferred,0x0,1
+      # monitor=,preferred,0x0,1
       monitor=,3840x2400,0x0,2
 
       # autostart
