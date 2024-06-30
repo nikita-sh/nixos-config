@@ -1,20 +1,4 @@
 { inputs, username, ... }: {
-  # imports = [ (import ./bat) ] ++ [ (import ./lsd) ] ++ [ (import ./btop) ]
-  #   ++ [ (import ./cava) ] ++ [ (import ./chatgpt-cli) ] ++ [
-  #     (import ./discord)
-  #   ] # discord with catppuccin theme
-  #   ++ [ (import ./gaming) ] ++ [ (import ./git) ] ++ [ (import ./gtk) ]
-  #   ++ [ (import ./hyprland) ] ++ [ (import ./kitty) ]
-  #   ++ [ (import ./mako) ] # notification deamon
-  #   ++ [ (import ./micro) ] # nano replacement
-  #   ++ [ (import ./nvim) ] ++ [ (import ./package) ]
-  #   ++ [ (import ./taskwarrior) ] ++ [ (import ./scripts) ] # personal scripts
-  #   ++ [
-  #     (import ./slack)
-  #   ]
-  #   ++ [ (import ./swaylock) ] ++ [ (import ./waybar) ] ++ [ (import ./wofi) ]
-  #   ++ [ (import ./spicetify) ] ++ [ (import ./zsh) ];
-
   imports = [
     ./bat 
     ./lsd 
@@ -33,7 +17,7 @@
     ./package 
     ./taskwarrior 
     ./scripts 
-    ./slack 
+    ./slack
     ./swaylock 
     ./waybar 
     ./wofi 
