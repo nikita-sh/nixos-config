@@ -24,5 +24,6 @@
     ./spicetify 
     ./zsh
     ./obsidian
+    ./vscode
   ];
 }

@@ -5,7 +5,8 @@
       
       # monitor=,preferred,auto,1
       # monitor=,preferred,0x0,1
-      monitor=,3840x2400,0x0,2
+      monitor=eDP-1,3840x2400,0x0,2
+      monitor=,preferred,auto,1
 
       # autostart
       exec-once = systemctl --user import-environment &
@@ -134,6 +135,7 @@
       bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh 1800 &
       bind = $mainMod SHIFT, M, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent] spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind = $mainMod SHIFT, O, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 5 silent] obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod SHIFT, V, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 1 silent] code /home/nikita/dev --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
