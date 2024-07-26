@@ -69,5 +69,6 @@
       probe-rs
       balena-cli
       bitwarden
+      pkg-config
     ]);
 }

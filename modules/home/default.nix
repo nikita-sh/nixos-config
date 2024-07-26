@@ -6,6 +6,7 @@
     ./cava 
     ./chatgpt-cli 
     ./discord 
+    ./direnv
     ./gaming 
     ./git 
     ./gtk 
