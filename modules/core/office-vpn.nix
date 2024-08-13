@@ -5,12 +5,12 @@ let
 
   vpn-port = 51820;
 
-in {
+in
+{
   options.office-vpn = {
     address = mkOption {
       type = types.str;
-      description = ''
-        This is the ip address for your user. It is found in the "Address" field of your conf file'';
+      description = ''This is the ip address for your user. It is found in the "Address" field of your conf file'';
       example = "192.168.5.4/32";
     };
     privateKeyFile = mkOption {
@@ -23,8 +23,7 @@ in {
   };
 
   config.networking.firewall = {
-    allowedUDPPorts =
-      [ vpn-port ]; # Clients and peers can use the same port, see listenport
+    allowedUDPPorts = [ vpn-port ]; # Clients and peers can use the same port, see listenport
   };
   # Enable WireGuard
   config.networking.wireguard.interfaces = {
@@ -32,8 +31,7 @@ in {
     wg0 = {
       # Determines the IP address and subnet of the client's end of the tunnel interface.
       ips = [ config.office-vpn.address ];
-      listenPort =
-        vpn-port; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
+      listenPort = vpn-port; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
 
       # Path to the private key file.
       #
@@ -59,9 +57,7 @@ in {
           ];
 
           # Set this to the server IP and port.
-          endpoint = "72.142.27.218:${
-              toString vpn-port
-            }"; # ToDo: route to endpoint not automatically configured https://wiki.archlinux.org/index.php/WireGuard#Loop_routing https://discourse.nixos.org/t/solved-minimal-firewall-setup-for-wireguard-client/7577
+          endpoint = "72.142.27.218:${toString vpn-port}"; # ToDo: route to endpoint not automatically configured https://wiki.archlinux.org/index.php/WireGuard#Loop_routing https://discourse.nixos.org/t/solved-minimal-firewall-setup-for-wireguard-client/7577
 
           # Send keepalives every 25 seconds. Important to keep NAT tables alive.
           persistentKeepalive = 25;

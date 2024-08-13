@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -28,4 +28,9 @@
       "workbench.iconTheme" = "Monokai Classic Icons";
     };
   };
+
+  # services.vscode-server = {
+  #   enable = true;
+  #   enableFHS = true;
+  # };
 }

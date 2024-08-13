@@ -1,1 +1,6 @@
-{ pkgs, ... }: { programs.lsd = { enable = true; }; }
+{ pkgs, ... }:
+{
+  programs.lsd = {
+    enable = true;
+  };
+}

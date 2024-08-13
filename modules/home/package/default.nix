@@ -1,6 +1,9 @@
-{ inputs, pkgs, ... }: {
-  home.packages = (with pkgs;
-    with gnome; [
+{ inputs, pkgs, ... }:
+{
+  home.packages = (
+    with pkgs;
+    with gnome;
+    [
       _1password # 1password cli + gui
       _1password-gui
       ani-cli # animu
@@ -70,5 +73,6 @@
       balena-cli
       bitwarden
       pkg-config
-    ]);
+    ]
+  );
 }

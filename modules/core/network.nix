@@ -1,4 +1,5 @@
-{ pkgs, hname, ... }: {
+{ pkgs, hname, ... }:
+{
   networking = {
     hostName = hname;
     networkmanager.enable = true;

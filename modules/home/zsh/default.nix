@@ -1,4 +1,10 @@
-{ hostname, config, pkgs, ... }: {
+{
+  hostname,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -6,7 +12,10 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf" ];
+      plugins = [
+        "git"
+        "fzf"
+      ];
     };
     initExtraFirst = ''
       DISABLE_MAGIC_FUNCTIONS=true
@@ -57,11 +66,9 @@
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
       nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
-      nix-switchu =
-        "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
+      nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
-      nix-clean =
-        "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
+      nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";

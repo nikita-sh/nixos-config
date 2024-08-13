@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.waybar.settings.mainBar = {
     layer = "top";
     position = "top";
@@ -52,7 +53,13 @@
       format-alt = "{time} {icon}";
       # "format-good" = "", // An empty format will hide the module
       # "format-full" = "";
-      format-icons = [ "" "" "" "" "" ];
+      format-icons = [
+        ""
+        ""
+        ""
+        ""
+        ""
+      ];
     };
 
     "disk#root" = {
@@ -109,16 +116,18 @@
     network = {
       interval = 1;
       tooltip = false;
-      format-wifi =
-        "<span foreground='#d79921'>{icon}</span>Connected<span foreground='#d79921'>  </span>{bandwidthUpBytes}<span foreground='#d79921'>  </span>{bandwidthDownBytes} ";
+      format-wifi = "<span foreground='#d79921'>{icon}</span>Connected<span foreground='#d79921'>  </span>{bandwidthUpBytes}<span foreground='#d79921'>  </span>{bandwidthDownBytes} ";
       format-disconnected = "󰤭";
-      format-ethernet =
-        "<span foreground='#d79921'>󰈀   </span>Wired  <span foreground='#d79921'>   </span>{bandwidthUpBytes}  <span foreground='#d79921'>   </span>{bandwidthDownBytes}";
-      on-click-right-release =
-        "alacritty --class nmtui -T 'Network Settings' -e nmtui";
-      on-click-release =
-        "$HOME/dev/nixos-config/modules/home/waybar/scripts/net.sh";
-      format-icons = [ "󰤯 " "󰤟 " "󰤢 " "󰤥 " "󰤨 " ];
+      format-ethernet = "<span foreground='#d79921'>󰈀   </span>Wired  <span foreground='#d79921'>   </span>{bandwidthUpBytes}  <span foreground='#d79921'>   </span>{bandwidthDownBytes}";
+      on-click-right-release = "alacritty --class nmtui -T 'Network Settings' -e nmtui";
+      on-click-release = "$HOME/dev/nixos-config/modules/home/waybar/scripts/net.sh";
+      format-icons = [
+        "󰤯 "
+        "󰤟 "
+        "󰤢 "
+        "󰤥 "
+        "󰤨 "
+      ];
     };
     # "network" = {
     #   format-wifi = " ";
@@ -215,7 +224,10 @@
         phone = "";
         portable = "";
         car = "";
-        default = [ "" "" ];
+        default = [
+          ""
+          ""
+        ];
       };
       on-click = "pavucontrol";
     };

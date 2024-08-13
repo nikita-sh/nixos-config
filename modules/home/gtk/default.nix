@@ -1,6 +1,8 @@
 { pkgs, ... }:
-let gbox-gtk = import ../themes/gruvbox/default.nix { inherit pkgs; };
-in {
+let
+  gbox-gtk = import ../themes/gruvbox/default.nix { inherit pkgs; };
+in
+{
   fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.nerdfonts

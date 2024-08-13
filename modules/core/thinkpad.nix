@@ -8,10 +8,14 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
-in {
+in
+{
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
-  environment.systemPackages = with pkgs; [ bluez-tools nvidia-offload ];
+  environment.systemPackages = with pkgs; [
+    bluez-tools
+    nvidia-offload
+  ];
 
   hardware = {
     #bluetooth = {
@@ -27,8 +31,10 @@ in {
       };
     };
 
-    opengl.extraPackages =
-      [ pkgs.mesa.drivers pkgs.linuxPackages.nvidia_x11.out ];
+    opengl.extraPackages = [
+      pkgs.mesa.drivers
+      pkgs.linuxPackages.nvidia_x11.out
+    ];
 
     # pulseaudio.enable = false;
   };
@@ -44,4 +50,3 @@ in {
     # };
   };
 }
-

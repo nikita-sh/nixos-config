@@ -1,8 +1,9 @@
-{ ... }: {
+{ ... }:
+{
   wayland.windowManager.hyprland = {
     extraConfig = ''
       $mainMod = SUPER
-      
+
       # monitor=,preferred,auto,1
       # monitor=,preferred,0x0,1
       monitor=eDP-1,3840x2400,0x0,2
@@ -130,7 +131,7 @@
       bind =,Cancel,exec,playerctl next
       # bind = $mainMod ALT, S, exec, grimshot copy window
       bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh 1800 &
-      
+
       # program binds
       bind = $mainMod SHIFT, V, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 2 silent] code /home/nikita/dev --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind = $mainMod SHIFT, B, exec, hyprctl dispatch exec '[workspace 3 silent] firefox'

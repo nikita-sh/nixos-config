@@ -1,4 +1,10 @@
-{ pkgs, config, inputs, ... }: {
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
+{
   home.packages = with pkgs; [
     ## Utils
     gamemode

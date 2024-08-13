@@ -23,10 +23,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { neovim-flake, home-manager, NixOS-WSL, nixpkgs, spicetify-nix
-    , self, ... }@inputs:
+  outputs =
+    {
+      neovim-flake,
+      home-manager,
+      NixOS-WSL,
+      nixpkgs,
+      spicetify-nix,
+      self,
+      ...
+    }@inputs:
     let
       selfPkgs = import ./pkgs;
       username = "nikita";
@@ -38,7 +47,9 @@
             style = "dark";
             name = "gruvbox";
           };
-          autocomplete = { enable = true; };
+          autocomplete = {
+            enable = true;
+          };
           languages = {
             terraform = {
               enable = true;
@@ -86,9 +97,17 @@
             enable = true;
             gitsigns.enable = true;
           };
-          telescope = { enable = true; };
-          autopairs = { enable = true; };
-          statusline = { lualine = { enable = true; }; };
+          telescope = {
+            enable = true;
+          };
+          autopairs = {
+            enable = true;
+          };
+          statusline = {
+            lualine = {
+              enable = true;
+            };
+          };
           visuals = {
             enable = true;
             cursorWordline.enable = true;
@@ -106,13 +125,20 @@
         modules = [ configModule ];
         inherit pkgs;
       };
-    in {
+    in
+    {
       # build nvim
       packages.${"x86_64-linux"}.neovim = customNeovim;
 
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = import ./modules/core/default.nix {
-        inherit self nixpkgs inputs username hname;
+        inherit
+          self
+          nixpkgs
+          inputs
+          username
+          hname
+          ;
       };
     };
 }
