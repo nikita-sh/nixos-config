@@ -139,6 +139,7 @@
       bind = $mainMod SHIFT, O, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 5 silent] obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind = $mainMod SHIFT, M, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 6 silent] spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
       bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 7 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod SHIFT, G, exec, hyprctl dispatch exec '[workspace 7 silent] steam --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
       # screenshot
       bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
