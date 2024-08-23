@@ -61,5 +61,7 @@
   "vim.smartRelativeLine": true,
   "window.autoDetectColorScheme": true,
   "workbench.editor.empty.hint": "hidden",
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true
 }

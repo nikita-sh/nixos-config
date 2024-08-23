@@ -26,6 +26,8 @@
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Gruvbox Dark Hard";
       "workbench.iconTheme" = "Monokai Classic Icons";
+      "files.insertFinalNewline" = true;
+      "files.trimFinalNewline" = true;
     };
   };
 
