@@ -93,6 +93,7 @@
       gcon = "git config user.name";
       gca = "git commit --amend";
       gpfwl = "git push --force-with-lease";
+      gpr = "git pull --rebase";
     };
   };
 

@@ -9,9 +9,9 @@
       p = "pull";
       pr = "pull --rebase";
       psh = "push";
-      ci = "commit";
+      c = "commit";
       ca = "commit --amend";
-      cim = "commit -m";
+      cm = "commit -m";
       s = "status";
       st = "stash";
       pfwl = "push --force-with-lease";
