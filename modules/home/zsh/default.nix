@@ -65,8 +65,8 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nix-switch = "sudo nixos-rebuild switch --flake ~/dev/nixos-config#nixos";
-      nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
+      nixrb = "sudo nixos-rebuild switch --flake ~/dev/nixos-config#nixos";
+      nixrbu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
@@ -74,6 +74,7 @@
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
       # Git
+      g = "git";
       ga = "git add";
       gaa = "git add --all";
       gs = "git status";
@@ -98,6 +99,9 @@
       gstp = "git stash pop";
       gl = "git log";
       grl = "git reflog";
+      gd = "git diff";
+      grb = "git rebase";
+      grbi = "git rebase -i";
     };
   };
 
