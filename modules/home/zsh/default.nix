@@ -65,7 +65,7 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
+      nix-switch = "sudo nixos-rebuild switch --flake ~/dev/nixos-config#nixos";
       nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
@@ -94,6 +94,8 @@
       gca = "git commit --amend";
       gpfwl = "git push --force-with-lease";
       gpr = "git pull --rebase";
+      gst = "git stash";
+      gstp = "git stash pop";
     };
   };
 
