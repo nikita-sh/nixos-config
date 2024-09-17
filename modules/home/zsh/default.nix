@@ -13,7 +13,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "git"
+        # "git"
         "fzf"
       ];
     };
@@ -96,6 +96,8 @@
       gpr = "git pull --rebase";
       gst = "git stash";
       gstp = "git stash pop";
+      gl = "git log";
+      grl = "git reflog";
     };
   };
 
