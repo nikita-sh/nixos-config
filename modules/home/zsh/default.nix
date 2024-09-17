@@ -79,18 +79,20 @@
       gs = "git status";
       gb = "git branch";
       gm = "git merge";
-      gpl = "git pull";
-      gplo = "git pull origin";
+      gp = "git pull";
+      gpo = "git pull origin";
       gps = "git push";
       gpst = "git push --follow-tags";
       gpso = "git push origin";
       gc = "git commit";
       gcm = "git commit -m";
       gtag = "git tag -ma";
-      gch = "git checkout";
-      gchb = "git checkout -b";
+      gco = "git checkout";
+      gcob = "git checkout -b";
       gcoe = "git config user.email";
       gcon = "git config user.name";
+      gca = "git commit --amend";
+      gpfwl = "git push --force-with-lease";
     };
   };
 
