@@ -104,7 +104,13 @@
       grbi = "git rebase -i";
 
       # fw
-      prb-run-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
+      pbrun-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
+    };
+
+    sessionVariables = {
+      HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
+      HYDRA_SSH_USER = "nikita";
+      HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_rsa";
     };
   };
 
