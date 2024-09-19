@@ -102,6 +102,9 @@
       gd = "git diff";
       grb = "git rebase";
       grbi = "git rebase -i";
+
+      # fw 
+      pbrun-atsam = "probe-rs run --chip ATSAMD51J18A";
     };
   };
 
