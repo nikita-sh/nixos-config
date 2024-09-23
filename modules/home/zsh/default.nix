@@ -111,6 +111,7 @@
       HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
       HYDRA_SSH_USER = "nikita";
       HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_rsa";
+      NIX_KEY = "/home/nikita/nix-keys/nixos.private.pem";
     };
   };
 
