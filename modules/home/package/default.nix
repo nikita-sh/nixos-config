@@ -73,6 +73,7 @@
       balena-cli
       bitwarden
       pkg-config
+      wireshark
     ]
   );
 }
