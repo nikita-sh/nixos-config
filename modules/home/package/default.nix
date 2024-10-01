@@ -74,6 +74,12 @@
       bitwarden
       pkg-config
       wireshark
+      inetutils
+      dig
+      dnsutils
+      pstree
+      strace
+      patchelf
     ]
   );
 }
