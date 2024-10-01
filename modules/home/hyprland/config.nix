@@ -133,7 +133,7 @@
       bind = $mainMod SHIFT, C, exec, pkill cycle_wallpaper && ~/dev/nixos-config/wallpapers/cycle_wallpaper.sh 1800 &
 
       # program binds
-      bind = $mainMod SHIFT, V, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 2 silent] code /home/nikita/dev --enable-features=UseOzonePlatform --ozone-platform=wayland'
+      bind = $mainMod SHIFT, V, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 2 silent] code /home/nikita/dev --ozone-platform-hint=auto'
       bind = $mainMod SHIFT, B, exec, hyprctl dispatch exec '[workspace 3 silent] firefox'
       bind = $mainMod SHIFT, S, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 4 silent]' slack
       bind = $mainMod SHIFT, O, exec, ELECTRON_OZONE_PLATFORM_HINT=wayland hyprctl dispatch exec '[workspace 5 silent] obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'
