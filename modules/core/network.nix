@@ -3,6 +3,9 @@
   networking = {
     hostName = hname;
     networkmanager.enable = true;
+    extraHosts = ''
+      100.67.22.56 hannibal.vital.company
+    '';
     # nameservers = [ "1.1.1.1" ];
     # firewall = {
     #   enable = true;

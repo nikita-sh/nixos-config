@@ -28,6 +28,7 @@
       "workbench.iconTheme" = "Monokai Classic Icons";
       "files.insertFinalNewline" = true;
       "files.trimFinalNewline" = true;
+      "window.zoomLevel" = 4;
     };
   };
 
