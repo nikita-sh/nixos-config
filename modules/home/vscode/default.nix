@@ -55,7 +55,7 @@
       "search.useGlobalIgnoreFiles" = true;
       "search.useParentIgnoreFiles" = true;
       "telemetry.telemetryLevel" = "off";
-      "terminal.integrated.fontSize" = 10;
+      # "terminal.integrated.fontSize" = 10;
       "terminal.integrated.scrollback" = 10000;
       "editor.lineNumbers" = "relative";
     };
