@@ -53,6 +53,7 @@
       neofetch
       pstree
       qemu
+      rustc
       starfetch
       zoom-us
       sway-contrib.grimshot

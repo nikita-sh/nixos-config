@@ -58,10 +58,6 @@
       # "terminal.integrated.fontSize" = 10;
       "terminal.integrated.scrollback" = 10000;
       "editor.lineNumbers" = "relative";
-      "[nix]" = {
-        "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
-      };
-      "rust-analyzer.cargo.features" = "all";
     };
   };
   # services.vscode-server = {
