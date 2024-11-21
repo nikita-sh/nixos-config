@@ -32,28 +32,43 @@
       keep-outputs = true
       keep-derivations = true
     '';
-    buildMachines = [
-      {
-        hostName = "hydra-aarch64.vital.company";
-        sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_rsa";
-        system = "aarch64-linux";
-        maxJobs = 4;
-        speedFactor = 2;
-        supportedFeatures = [
-          "nixos-test"
-          "benchmark"
-          "big-parallel"
-          "kvm"
-        ];
-        mandatoryFeatures = [ ];
-      }
-    ];
+    # buildMachines = [
+    #   {
+    #     hostName = "hydra-aarch64.vital.company";
+    #     sshUser = "nikita";
+    #     sshKey = "/home/nikita/.ssh/id_rsa";
+    #     system = "aarch64-linux";
+    #     maxJobs = 4;
+    #     speedFactor = 2;
+    #     supportedFeatures = [
+    #       "nixos-test"
+    #       "benchmark"
+    #       "big-parallel"
+    #       "kvm"
+    #     ];
+    #     mandatoryFeatures = [ ];
+    #   }
+    #   {
+    #     hostName = "hydra-x8664.vital.company";
+    #     sshUser = "nikita";
+    #     sshKey = "/home/nikita/.ssh/id_rsa";
+    #     system = "x86_64-linux";
+    #     maxJobs = 4;
+    #     speedFactor = 2;
+    #     supportedFeatures = [
+    #       "nixos-test"
+    #       "benchmark"
+    #       "big-parallel"
+    #       "kvm"
+    #     ];
+    #     mandatoryFeatures = [ ];
+    #   }
+    # ];
   };
   nixpkgs = {
     overlays = [
-      self.overlays.default
-      inputs.nur.overlay
+      # self.overlays.default
+      # inputs.nur.overlay
     ];
   };
 

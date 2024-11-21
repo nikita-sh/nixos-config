@@ -111,7 +111,7 @@
     sessionVariables = {
       HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
       HYDRA_SSH_USER = "nikita";
-      HYDRA_SSH_IDENTITY = "~/.ssh/id_rsa";
+      HYDRA_SSH_IDENTITY = "~/.ssh/id_ed25519";
       NIX_KEY = "~/nix-keys/nixos.private.pem";
     };
   };
