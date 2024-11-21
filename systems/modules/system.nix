@@ -85,6 +85,16 @@
     ];
   };
 
+  users = {
+    users = {
+      nikita = {
+        isNormalUser = true;
+        extraGroups = ["wheel"];
+        shell = pkgs.zsh;
+      };
+    };
+  };
+
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_US.UTF-8";
   system.stateVersion = "23.05";

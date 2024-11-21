@@ -26,10 +26,11 @@
 	        ../modules/program.nix
 	        ../modules/services.nix
 	        ../modules/system.nix
-	        # ../modules/office-vpn.nix
+	        ../modules/office-vpn.nix
 	        ../modules/software-workstation.nix
 	        ../modules/probe-rs.nix
-	        # ../modules/vpn.nix
+	        ../modules/vpn.nix
+          ../modules/security.nix
         ];
       };
     };

@@ -39,8 +39,8 @@
       }
     ];
     initExtra = ''
-      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
-      '';
+      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh # && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
+    '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
@@ -109,11 +109,11 @@
     };
 
     sessionVariables = {
-      HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
-      HYDRA_X86_64_BUILDER = "hydra-x86_64.vital.company";
+      HYDRA_AARCH64_BUILDER = "hydra-aarch64";
+      HYDRA_X86_64_BUILDER = "hydra-x8664";
       HYDRA_SSH_USER = "nikita";
-      HYDRA_SSH_IDENTITY = "~/.ssh/id_ed25519";
-      NIX_KEY = "~/nix-keys/nixos.private.pem";
+      # HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_ed25519";
+      NIX_KEY = "/home/nikita/nix-keys/kollibri.private.pem";
     };
   };
 
