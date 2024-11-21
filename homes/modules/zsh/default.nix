@@ -8,7 +8,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
@@ -39,8 +39,8 @@
       }
     ];
     initExtra = ''
-      source /home/nikita/dev/nixos-config/modules/home/zsh/dot-p10k.zsh && ${pkgs.openssh}/bin/ssh-add /home/nikita/.ssh/id_rsa
-    '';
+      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
+      '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
@@ -54,7 +54,7 @@
       icat = "kitten icat";
       dsize = "du -hs";
       findw = "grep -rl";
-      nvim = "nix run /home/nikita/dev/nixos-config#neovim --";
+      nvim = "nix run ~/dev/nixos-config/homes/$HOST#neovim --";
       s = "kitten ssh";
       diff = "delta";
       t = "task";
@@ -111,8 +111,8 @@
     sessionVariables = {
       HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
       HYDRA_SSH_USER = "nikita";
-      HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_rsa";
-      NIX_KEY = "/home/nikita/nix-keys/nixos.private.pem";
+      HYDRA_SSH_IDENTITY = "~/.ssh/id_rsa";
+      NIX_KEY = "~/nix-keys/nixos.private.pem";
     };
   };
 

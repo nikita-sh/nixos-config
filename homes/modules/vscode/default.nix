@@ -31,7 +31,7 @@
       "workbench.iconTheme" = "Monokai Classic Icons";
       "files.insertFinalNewline" = true;
       "files.trimFinalNewline" = true;
-      "window.zoomLevel" = 4;
+      "window.zoomLevel" = 0;
       "gitlens.ai.experimental.generateCommitMessage.enabled" = false;
       "gitlens.launchpad.indicator.enabled" = false;
       "gitlens.launchpad.indicator.polling.enabled" = false;
