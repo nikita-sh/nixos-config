@@ -110,17 +110,17 @@
       packages.${system}.neovim = customNeovim;
       homeConfigurations."nikita@falke" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        
+
         extraSpecialArgs = {
           inherit inputs;
         };
         modules = [ 
             {
-                home = {
-                  homeDirectory = "/Users/nikita";
-                  stateVersion = "24.05";
-                  username = "nikita";
-                };
+              home = {
+                homeDirectory = "/Users/nikita";
+                stateVersion = "24.05";
+                username = "nikita";
+              };
             }
             ../modules/bat
             ../modules/lsd

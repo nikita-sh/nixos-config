@@ -24,6 +24,7 @@
     ];
     userSettings = {
       "editor.fontFamily" = "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace";
+      "editor.fontSize" = 13;
       "editor.fontLigatures" = true;
       "git.openRepositoryInParentFolders" = "always";
       "window.titleBarStyle" = "custom";
@@ -58,6 +59,7 @@
       # "terminal.integrated.fontSize" = 10;
       "terminal.integrated.scrollback" = 10000;
       "editor.lineNumbers" = "relative";
+      "rust-analyzer.cargo.features" = "all";
     };
   };
   # services.vscode-server = {

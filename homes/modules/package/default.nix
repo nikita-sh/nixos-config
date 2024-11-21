@@ -60,6 +60,7 @@
       # strace
       # patchelf
       home-manager
+      tailscale
     ]
   );
 }

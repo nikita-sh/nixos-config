@@ -39,7 +39,7 @@
       }
     ];
     initExtra = ''
-      source /home/nikita/dev/nixos-config/modules/home/zsh/dot-p10k.zsh && ${pkgs.openssh}/bin/ssh-add /home/nikita/.ssh/id_rsa
+      source /home/nikita/dev/nixos-config/modules/home/zsh/dot-p10k.zsh && ${pkgs.openssh}/bin/ssh-add /home/nikita/.ssh/id_rsa >/dev/null 2>&1
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
@@ -86,6 +86,7 @@
       gpst = "git push --follow-tags";
       gpso = "git push origin";
       gc = "git commit";
+      gcp = "git cherry-pick";
       gcm = "git commit -m";
       gtag = "git tag -ma";
       gco = "git checkout";

@@ -37,7 +37,7 @@
         config.allowUnfree = true;
       };
 
-      networking.hosts = '''';
+      security.pam.enableSudoTouchIdAuth = true;
     };
   in
   {
