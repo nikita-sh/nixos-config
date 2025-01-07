@@ -114,15 +114,15 @@
           inherit inputs;
         };
         modules = [ 
-	  ../modules/kollibri.nix 
-	  {
-	    home = {
-	      homeDirectory = "/home/nikita";
-	      stateVersion = "24.05";
-	      username = "nikita";
-	    };
-	  }
-	];
+	        ../modules/kollibri.nix 
+	        {
+	          home = {
+	            homeDirectory = "/home/nikita";
+	            stateVersion = "24.05";
+	            username = "nikita";
+	          };
+	        }
+	      ];
       };
     };
 }

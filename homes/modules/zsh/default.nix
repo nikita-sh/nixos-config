@@ -65,13 +65,16 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nixos-rebuild switch --flake ~/dev/nixos-config#nixos";
-      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
+      nixosrb = "sudo nixos-rebuild switch --flake /home/nikita/dev/nixos-config/systems/kollibri#kollibri";
+      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake /home/nikita/dev/nixos-config/systems/kollibri#kollibri";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
+
+      # home manager 
+      hmrb = "home-manager switch --flake ~/dev/nixos-config/homes/kollibri#nikita@kollibri";
 
       # Git
       g = "git";
@@ -109,8 +112,8 @@
     };
 
     sessionVariables = {
-      HYDRA_AARCH64_BUILDER = "hydra-aarch64";
-      HYDRA_X86_64_BUILDER = "hydra-x8664";
+      HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
+      HYDRA_X86_64_BUILDER = "hydra-x86-64.vital.company";
       HYDRA_SSH_USER = "nikita";
       # HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_ed25519";
       NIX_KEY = "/home/nikita/nix-keys/kollibri.private.pem";
