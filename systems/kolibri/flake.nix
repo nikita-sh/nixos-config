@@ -11,12 +11,12 @@
       ...
     }:
     {
-      nixosConfigurations.kollibri = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.kolibri = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = {
           inherit inputs;
 	  inherit (inputs) self nixpkgs;
-          hostname = "kollibri";
+          hostname = "kolibri";
         };
         modules = [
 	        inputs.vscode-server.nixosModules.default

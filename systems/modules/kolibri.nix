@@ -6,7 +6,7 @@
   ...
 }:
 {
-  kollibri = nixpkgs.lib.nixosSystem {
+  kolibri = nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
         inputs

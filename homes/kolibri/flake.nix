@@ -108,13 +108,13 @@
     {
       packages.${system}.neovim = customNeovim;
 
-      homeConfigurations."nikita@kollibri" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."nikita@kolibri" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit inputs;
         };
         modules = [ 
-	        ../modules/kollibri.nix 
+	        ../modules/kolibri.nix 
 	        {
 	          home = {
 	            homeDirectory = "/home/nikita";
