@@ -103,7 +103,7 @@
         inherit pkgs;
       };
 
-      system = "x86-64-linux";
+      system = "x86_64-linux";
     in
     {
       packages.${system}.neovim = customNeovim;
