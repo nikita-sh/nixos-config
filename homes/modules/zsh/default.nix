@@ -39,7 +39,7 @@
       }
     ];
     initExtra = ''
-      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh # && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
+      source ~/dev/nixos-config/homes/modules/zsh/dot-p10k.zsh # && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
@@ -55,7 +55,6 @@
       dsize = "du -hs";
       findw = "grep -rl";
       nvim = "nix run ~/dev/nixos-config/homes/$HOST#neovim --";
-      s = "kitten ssh";
       diff = "delta";
       t = "task";
       gpt = "chatgpt";
@@ -65,8 +64,8 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nixos-rebuild switch --flake /home/nikita/dev/nixos-config/systems/kolibri#kolibri";
-      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake /home/nikita/dev/nixos-config/systems/kolibri#kolibri";
+      nixosrb = "sudo nixos-rebuild switch --flake /home/nikita/dev/nixos-config/systems/mynah#mynah";
+      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake /home/nikita/dev/nixos-config/systems/mynah#mynah";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
@@ -74,7 +73,7 @@
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
       # home manager 
-      hmrb = "home-manager switch --flake ~/dev/nixos-config/homes/kolibri#nikita@kolibri";
+      hmrb = "home-manager switch --flake ~/dev/nixos-config/homes/mynah#nikita@mynah";
 
       # Git
       g = "git";
