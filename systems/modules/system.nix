@@ -36,7 +36,22 @@
       {
         hostName = "hydra-aarch64.vital.company";
         sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_rsa";
+        sshKey = "/home/nikita/.ssh/id_ed25519";
+        system = "aarch64-linux";
+        maxJobs = 4;
+        speedFactor = 2;
+        supportedFeatures = [
+          "nixos-test"
+          "benchmark"
+          "big-parallel"
+          "kvm"
+        ];
+        mandatoryFeatures = [ ];
+      }
+      {
+        hostName = "hydra-x86-64.vital.company";
+        sshUser = "nikita";
+        sshKey = "/home/nikita/.ssh/id_ed25519";
         system = "aarch64-linux";
         maxJobs = 4;
         speedFactor = 2;
