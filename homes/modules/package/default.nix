@@ -61,6 +61,7 @@
       # patchelf
       home-manager
       tailscale
+      fd
     ]
   );
 }
