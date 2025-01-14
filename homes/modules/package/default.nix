@@ -49,6 +49,7 @@
       strace
       patchelf
       home-manager
+      fd
     ]
   );
 }
