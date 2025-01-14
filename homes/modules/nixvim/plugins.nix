@@ -4,30 +4,19 @@
     bufferline = {
       enable = true;
     };
-
     web-devicons.enable = true;
-
     oil.enable = true;
-
     treesitter.enable = true;
-
     nvim-autopairs.enable = true;
-
     gitsigns.enable = true;
-
     markdown-preview.enable = true;
-
     telescope = {
       enable = true;
       extensions = {
         fzf-native.enable = true;
       };
     };
-
     nix.enable = true;
-
-    # lsp = {
-    #   
-    # };
+    nvim-tree.enable = true;
   };
 }
