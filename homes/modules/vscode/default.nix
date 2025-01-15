@@ -60,8 +60,8 @@
       "editor.lineNumbers" = "relative";
     };
   };
-  # services.vscode-server = {
-  #   enable = true;
-  #   enableFHS = true;
-  # };
+  services.vscode-server = {
+    enable = true;
+    # enableFHS = true;
+  };
 }
