@@ -60,6 +60,7 @@
       "terminal.integrated.scrollback" = 10000;
       "editor.lineNumbers" = "relative";
       "rust-analyzer.cargo.features" = "all";
+#       "rust-analyzer.procMacro.enable" = false;
     };
   };
   # services.vscode-server = {
