@@ -20,6 +20,6 @@
     ./spicetify
     ./zsh
     ./obsidian
-    ./vscode
+#    ./vscode
   ];
 }
