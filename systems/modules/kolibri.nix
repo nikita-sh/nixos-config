@@ -17,18 +17,6 @@
     };
     modules =
       [
-        inputs.vscode-server.nixosModules.default
-        (
-          { config, pkgs, ... }:
-          {
-            services.vscode-server = {
-              enable = true;
-              enableFHS = true;
-            };
-          }
-        )
-      ]
-      ++ [
         (import ./bootloader.nix)
       ]
       ++ [ (import ./network.nix) ]

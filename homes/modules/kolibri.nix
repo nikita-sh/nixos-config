@@ -9,5 +9,6 @@
     ./nvim
     ./package
     ./zsh
+    ./vscode-server
   ];
 }

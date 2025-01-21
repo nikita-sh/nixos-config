@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/release-24.11";
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
   outputs =
@@ -19,7 +18,6 @@
           hostname = "kolibri";
         };
         modules = [
-	  inputs.vscode-server.nixosModules.default
           ./hardware.nix
 	  ../modules/bootloader.nix
 	  ../modules/network.nix

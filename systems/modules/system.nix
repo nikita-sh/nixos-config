@@ -1,8 +1,6 @@
 {
   self,
   pkgs,
-  lib,
-  inputs,
   ...
 }:
 {
@@ -64,12 +62,6 @@
       }
     ];
   };
-  nixpkgs = {
-    overlays = [
-      # self.overlays.default
-      # inputs.nur.overlay
-    ];
-  };
 
   environment.systemPackages = with pkgs; [
     wget
@@ -77,12 +69,7 @@
     nil
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
-  };
+  nixpkgs.config.allowUnfree = true;
 
   users = {
     users = {

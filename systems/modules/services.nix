@@ -12,10 +12,6 @@
         local all       all     trust
       '';
     };
-    vscode-server = {
-      enable = true;
-      enableFHS = true;
-    };
   };
 
   programs.ssh.startAgent = true;

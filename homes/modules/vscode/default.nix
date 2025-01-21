@@ -3,24 +3,26 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
-      jdinhlife.gruvbox
-      eamodio.gitlens
-      github.vscode-pull-request-github
-      hashicorp.terraform
-      haskell.haskell
-      jnoortheen.nix-ide
-      mechatroner.rainbow-csv
-      mhutchie.git-graph
-      mkhl.direnv
-      ms-python.python
-      ms-vscode.makefile-tools
-      ms-vscode.powershell
-      ms-vscode-remote.remote-ssh
-      rust-lang.rust-analyzer
-      tamasfe.even-better-toml
-      vscodevim.vim
-      zxh404.vscode-proto3
+        dbaeumer.vscode-eslint
+        eamodio.gitlens
+        esbenp.prettier-vscode
+        github.vscode-pull-request-github
+        hashicorp.terraform
+        haskell.haskell
+        jnoortheen.nix-ide
+        justusadam.language-haskell
+        mechatroner.rainbow-csv
+        mkhl.direnv
+        ms-python.black-formatter
+        ms-vscode.cpptools-extension-pack
+        ms-vscode.makefile-tools
+        ms-vscode.powershell
+        ms-vscode-remote.remote-ssh
+        nefrob.vscode-just-syntax
+        rust-lang.rust-analyzer
+        tamasfe.even-better-toml
+        vscodevim.vim
+        zxh404.vscode-proto3
     ];
     userSettings = {
       "editor.fontFamily" = "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace";
@@ -59,9 +61,5 @@
       "terminal.integrated.scrollback" = 10000;
       "editor.lineNumbers" = "relative";
     };
-  };
-  services.vscode-server = {
-    enable = true;
-    # enableFHS = true;
   };
 }

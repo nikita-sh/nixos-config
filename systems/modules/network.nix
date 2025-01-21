@@ -3,6 +3,9 @@
   networking = {
     hostName = hostname;
     networkmanager.enable = true;
+    extraHosts = ''
+      192.168.100.230 ui-test-1.vital.company
+    '';
     # nameservers = [ "1.1.1.1" ];
     # firewall = {
     #   enable = true;
