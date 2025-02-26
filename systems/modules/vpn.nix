@@ -1,7 +1,7 @@
 { ... }:
 {
   office-vpn = {
-    address = "192.168.5.98/32";
+    address = "10.200.0.133/32";
     privateKeyFile = "/home/nikita/.office-vpn/private.key";
   };
 }

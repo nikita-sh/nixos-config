@@ -31,7 +31,7 @@
     '';
     buildMachines = [
       {
-        hostName = "hydra-aarch64.vital.company";
+        hostName = "hydra-aarch64";
         sshUser = "nikita";
         sshKey = "/home/nikita/.ssh/id_ed25519";
         system = "aarch64-linux";
@@ -46,7 +46,7 @@
         mandatoryFeatures = [ ];
       }
       {
-        hostName = "hydra-x86-64.vital.company";
+        hostName = "hydra-x86-64";
         sshUser = "nikita";
         sshKey = "/home/nikita/.ssh/id_ed25519";
         system = "x86_64-linux";
