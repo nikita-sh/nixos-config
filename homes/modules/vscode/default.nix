@@ -60,7 +60,10 @@
       "terminal.integrated.scrollback" = 10000;
       "editor.lineNumbers" = "relative";
       "rust-analyzer.cargo.features" = "all";
+      "rust-analyzer.cargo.targetDir" = true;
       "rust-analyzer.check.command" = "clippy";
+      # "rust-analyzer.check.workspace" = false;
+      # "rust-analyzer.check.features" = null;
       # "rust-analyzer.procMacro.enable" = false;
     };
   };
