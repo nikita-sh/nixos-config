@@ -4,7 +4,6 @@
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       vscodevim.vim
-      jdinhlife.gruvbox
       eamodio.gitlens
       github.vscode-pull-request-github
       hashicorp.terraform
@@ -21,6 +20,9 @@
       tamasfe.even-better-toml
       vscodevim.vim
       zxh404.vscode-proto3
+      jdinhlife.gruvbox
+      catppuccin.catppuccin-vsc
+      sainnhe.gruvbox-material
     ];
     userSettings = {
       "editor.fontFamily" = "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace";
@@ -29,7 +31,7 @@
       "git.openRepositoryInParentFolders" = "always";
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Gruvbox Dark Hard";
-      "workbench.iconTheme" = "Monokai Classic Icons";
+      "workbench.iconTheme" = "catppuccin-latte";
       "files.insertFinalNewline" = true;
       "files.trimFinalNewline" = true;
       "window.zoomLevel" = 0;

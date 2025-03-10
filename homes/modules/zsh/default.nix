@@ -65,13 +65,17 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nixos-rebuild switch --flake ~/dev/nixos-config#nixos";
-      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#nixos";
+      nixosrb = "sudo nix run nix-darwin switch -- --flake /home/nikita/dev/nixos-config/systems/falke#falke";
+      nixosrbu = "sudo nix run nix-darwin switch -- --upgrade --flake /home/nikita/dev/nixos-config/systems/falke#falke";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
+
+      # home-manager  
+      hmrb = "export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake /home/nikita/dev/nixos-config/homes/falke#nikita@falke";
+      hmrbu = "export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --upgrade --flake /home/nikita/dev/nixos-config/homes/falke#nikita@falke";
 
       # Git
       g = "git";
@@ -105,7 +109,8 @@
       grbi = "git rebase -i";
 
       # fw
-      pbrun-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
+      pbrun-atsam18 = "sudo probe-rs run --chip ATSAMD51J18A";
+      pbrun-atsam20 = "sudo probe-rs run --chip ATSAMD51J20A";
     };
 
     sessionVariables = {
