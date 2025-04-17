@@ -11,6 +11,18 @@
         #type database  DBuser  auth-method
         local all       all     trust
       '';
+      ensureUsers = [
+        {
+          name = "nikita";
+          ensureClauses.superuser = true;
+        }
+      ];
+      ensureDatabases = [
+        "conductor"
+      ];
+      # settings = {
+      #   port = 10004;
+      # };
     };
   };
 
