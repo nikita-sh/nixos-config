@@ -18,5 +18,6 @@
     };
     nix.enable = true;
     nvim-tree.enable = true;
+    lazy.enable = true;
   };
 }
