@@ -12,10 +12,6 @@
         "nix-command"
         "flakes"
       ];
-      substituters = [ "https://nix-gaming.cachix.org" ];
-      trusted-public-keys = [
-        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-      ];
     };
     gc = {
       automatic = true;
@@ -23,7 +19,6 @@
       options = "--delete-older-than 7d";
     };
     distributedBuilds = true;
-    # https://github.com/nix-community/nix-direnv
     extraOptions = ''
       builders-use-substitutes = true
       keep-outputs = true
@@ -31,34 +26,18 @@
     '';
     buildMachines = [
       {
-        hostName = "hydra-aarch64";
-        sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_ed25519";
-        system = "aarch64-linux";
-        maxJobs = 4;
+        hostName = "nixbuild.vital.company";
+        system = "x86_64-linux";
+        maxJobs = 64;
         speedFactor = 2;
-        supportedFeatures = [
-          "nixos-test"
-          "benchmark"
-          "big-parallel"
-          "kvm"
-        ];
-        mandatoryFeatures = [ ];
+        supportedFeatures = [ "benchmark" "big-parallel" ];
       }
       {
-        hostName = "hydra-x86-64";
-        sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_ed25519";
-        system = "x86_64-linux";
-        maxJobs = 4;
+        hostName = "nixbuild.vital.company";
+        system = "aarch64-linux";
+        maxJobs = 64;
         speedFactor = 2;
-        supportedFeatures = [
-          "nixos-test"
-          "benchmark"
-          "big-parallel"
-          "kvm"
-        ];
-        mandatoryFeatures = [ ];
+        supportedFeatures = [ "benchmark" "big-parallel" ];
       }
     ];
   };
@@ -84,4 +63,32 @@
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_US.UTF-8";
   system.stateVersion = "23.05";
+
+  programs.ssh = {
+    extraConfig = ''
+      Host hydra-x8664
+        Hostname hydra-x8664
+        User nikita
+        ForwardAgent yes
+
+      Host hydra-aarch64
+        Hostname hydra-aarch64
+        User nikita
+        ForwardAgent yes
+
+      Host nixbuild.vital.company
+        Port 2222
+        PubkeyAcceptedKeyTypes ssh-ed25519
+        ServerAliveInterval 60
+        IPQoS throughput
+        IdentityFile /home/nikita/.ssh/id_nixbuild
+    '';
+
+    knownHosts = {
+      nixbuild = {
+        hostNames = [ "nixbuild.vital.company" ];
+        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ+jBIzENqxs/p7dFEAIjG8e5TT+A9Gvhi1cKNdIJ9vW";
+      };
+    };
+  };
 }
