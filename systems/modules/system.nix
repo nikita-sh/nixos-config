@@ -39,6 +39,24 @@
         speedFactor = 2;
         supportedFeatures = [ "benchmark" "big-parallel" ];
       }
+      {
+        hostName = "hydra-aarch64.vital.company";
+        system = "aarch64-linux";
+        maxJobs = 64;
+        speedFactor = 2;
+        sshUser = "nikita";
+        sshKey = "/hoime/nikita/.ssh/id_ed25519";
+        supportedFeatures = [ "benchmark" "big-parallel" ];
+      }
+      {
+        hostName = "hydra-x86-64.vital.company";
+        system = "x86_64-linux";
+        maxJobs = 64;
+        speedFactor = 2;
+        sshUser = "nikita";
+        sshKey = "/hoime/nikita/.ssh/id_ed25519";
+        supportedFeatures = [ "benchmark" "big-parallel" ];
+      }
     ];
   };
 

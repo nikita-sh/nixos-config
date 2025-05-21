@@ -47,7 +47,7 @@
       cd = "z";
       # vim = "nvim";
       cat = "bat";
-      ls = "lsd";
+      # ls = "lsd";
       nano = "micro";
       icat = "kitten icat";
       dsize = "du -hs";
