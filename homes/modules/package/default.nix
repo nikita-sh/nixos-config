@@ -49,7 +49,6 @@
       calcurse
       vim # just in case
       probe-rs
-      balena-cli
       # bitwarden
       pkg-config
       wireshark
