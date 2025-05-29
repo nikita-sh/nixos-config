@@ -70,6 +70,7 @@
         "rust-analyzer.cargo.features" = "all";
         "rust-analyzer.cargo.targetDir" = true;
         "rust-analyzer.check.command" = "clippy";
+        "extensions.verifySignature" = false;
       };
     };
     
