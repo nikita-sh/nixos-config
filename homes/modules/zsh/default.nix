@@ -37,7 +37,7 @@
       }
     ];
     initExtra = ''
-      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh # && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
+      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
