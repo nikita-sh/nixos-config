@@ -11,8 +11,17 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        # "git"
+        "alias-finder"
         "fzf"
+        "colored-man-pages"
+        "direnv"
+        "rust"
+        "systemd"
+        "tailscale"
+        "nmap"
+        "kitty"
+        "colorize"
+        # "starship"
       ];
     };
     initExtraFirst = ''
@@ -110,12 +119,12 @@
     };
 
     sessionVariables = {
-      #  HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
-      #  HYDRA_X86_64_BUILDER = "hydra-x86-64.vital.company";
-      HYDRA_AARCH64_BUILDER = "nixbuild.vital.company";
-      HYDRA_X86_64_BUILDER = "nixbuild.vital.company";
+      HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
+      HYDRA_X86_64_BUILDER = "hydra-x86-64.vital.company";
+      # HYDRA_AARCH64_BUILDER = "nixbuild.vital.company";
+      # HYDRA_X86_64_BUILDER = "nixbuild.vital.company";
       HYDRA_SSH_USER = "nikita";
-      # HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_ed25519";
+      HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_ed25519";
       NIX_KEY = "/home/nikita/nix-keys/kolibri.private.pem";
     };
   };
