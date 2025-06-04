@@ -20,5 +20,6 @@
     nvim-tree.enable = true;
     lazy.enable = true;
     fugitive.enable = true;
+    dashboard.enable = true;
   };
 }

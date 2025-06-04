@@ -14,8 +14,17 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        # "git"
+        "alias-finder"
         "fzf"
+        "colored-man-pages"
+        "direnv"
+        "rust"
+        "systemd"
+        "tailscale"
+        "nmap"
+        "kitty"
+        "colorize"
+        # "starship"
       ];
     };
     initContent = lib.mkBefore ''

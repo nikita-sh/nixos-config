@@ -71,6 +71,7 @@
         "rust-analyzer.cargo.targetDir" = true;
         "rust-analyzer.check.command" = "clippy";
         "extensions.verifySignature" = false;
+        "parallels-desktop.extension.path" = "/Users/nikita/.parallels-desktop-vscode";
       };
     };
     
