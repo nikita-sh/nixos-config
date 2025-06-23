@@ -26,10 +26,11 @@
         sainnhe.gruvbox-material
         github.copilot
         ms-python.vscode-pylance
-        # ms-vscode.cpptools
-        # ms-vscode.cpptools-extension-pack
-        # twxs.cmake
-        # ms-vscode.cmake-tools
+        twxs.cmake
+        ms-vscode.cpptools
+        ms-vscode.cmake-tools
+        ms-vscode.cpptools-extension-pack
+        # raspberry-pi.raspberry-pi-pico # doesnt exist yet
       ];
       userSettings = {
         "editor.fontFamily" = "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace";

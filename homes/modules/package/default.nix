@@ -61,6 +61,7 @@
       home-manager
       tailscale
       fd
+      imagemagick # for neofetch
     ]
   );
 }

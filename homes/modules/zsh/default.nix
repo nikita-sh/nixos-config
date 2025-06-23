@@ -30,6 +30,7 @@
     initContent = lib.mkBefore ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
+      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
     '';
     plugins = [
       {
@@ -48,9 +49,6 @@
         };
       }
     ];
-    initExtra = ''
-      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
-      '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
@@ -126,9 +124,8 @@
     sessionVariables = {
       HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
       HYDRA_SSH_USER = "nikita";
-      HYDRA_SSH_IDENTITY = "~/.ssh/id_rsa";
+      HYDRA_SSH_IDENTITY = "~/.ssh/id_ed25519";
       NIX_KEY = "~/nix-keys/nixos.private.pem";
-      SSH_AUTH_SOCK = "/Users/nikita/.bitwarden-ssh-agent.sock";
     };
   };
 
