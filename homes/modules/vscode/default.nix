@@ -3,7 +3,7 @@
   programs.vscode = {
     enable = true;
     profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
         vscodevim.vim
         eamodio.gitlens
         github.vscode-pull-request-github
@@ -26,11 +26,18 @@
         sainnhe.gruvbox-material
         github.copilot
         ms-python.vscode-pylance
+        raspberry-pi.raspberry-pi-pico
+        paulober.pico-w-go
         twxs.cmake
-        ms-vscode.cpptools
+        # ms-vscode.cpptools
         ms-vscode.cmake-tools
         ms-vscode.cpptools-extension-pack
-        # raspberry-pi.raspberry-pi-pico # doesnt exist yet
+        ms-vscode.vscode-serial-monitor
+        marus25.cortex-debug
+        mcu-debug.debug-tracker-vscode
+        mcu-debug.memory-view
+        mcu-debug.peripheral-viewer
+        mcu-debug.rtos-views
       ];
       userSettings = {
         "editor.fontFamily" = "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace";

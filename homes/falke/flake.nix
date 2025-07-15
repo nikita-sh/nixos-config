@@ -11,6 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs =
@@ -20,6 +21,7 @@
       home-manager,
       nixpkgs,
       nixpkgs-unstable,
+      nix-vscode-extensions,
       ...
     }:
     let
@@ -27,13 +29,16 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [
+          nix-vscode-extensions.overlays.default
+        ];
       };
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       nixvimLib = nixvim.lib.${system};
       nixvim' = nixvim.legacyPackages.${system};
       nixvimModule = {
       	pkgs = pkgs-unstable;
-	module = import ../modules/nixvim;
+	      module = import ../modules/nixvim;
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
     in
