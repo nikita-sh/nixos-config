@@ -62,6 +62,8 @@
       tailscale
       fd
       imagemagick # for neofetch
+      gh
+      claude-code
     ]
   );
 }

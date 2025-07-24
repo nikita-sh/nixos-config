@@ -34,9 +34,27 @@
     '';
     buildMachines = [
       {
+        hostName = "nixbuild.vital.company";
+        system = "x86_64-linux";
+        maxJobs = 64;
+        speedFactor = 2;
+        sshUser = "nikita";
+        sshKey = "/Users/nikita/.ssh/id_ed25519";
+        supportedFeatures = [ "benchmark" "big-parallel" ];
+      }
+      {
+        hostName = "nixbuild.vital.company";
+        system = "aarch64-linux";
+        maxJobs = 64;
+        speedFactor = 2;
+        sshUser = "nikita";
+        sshKey = "/Users/nikita/.ssh/id_ed25519";
+        supportedFeatures = [ "benchmark" "big-parallel" ];
+      }
+      {
         hostName = "hydra-aarch64.vital.company";
         sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_ed25519";
+        sshKey = "/home/Users/.ssh/id_ed25519";
         system = "aarch64-linux";
         maxJobs = 4;
         speedFactor = 2;
@@ -51,7 +69,7 @@
       {
         hostName = "hydra-x86-64.vital.company";
         sshUser = "nikita";
-        sshKey = "/home/nikita/.ssh/id_ed25519";
+        sshKey = "/home/Users/.ssh/id_ed25519";
         system = "aarch64-linux";
         maxJobs = 4;
         speedFactor = 2;
@@ -94,4 +112,46 @@ Host *
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_US.UTF-8";
   system.stateVersion = "23.05";
+
+  programs.ssh = {
+    extraConfig = ''
+      Host hydra-x8664
+        Hostname hydra-x8664
+        User nikita
+        ForwardAgent yes
+        IdentityFile /Users/nikita/.ssh/id_ed25519
+
+      Host hydra-aarch64
+        Hostname hydra-aarch64
+        User nikita
+        ForwardAgent yes
+        IdentityFile /Users/nikita/.ssh/id_ed25519
+
+      Host hydra-x86-64.vital.company
+        Hostname hydra-x86-64.vital.company
+        User nikita
+        ForwardAgent yes
+        IdentityFile /Users/nikita/.ssh/id_ed25519
+
+      Host hydra-aarch64.vital.company
+        Hostname hydra-aarch64.vital.company
+        User nikita
+        ForwardAgent yes
+        IdentityFile /Users/nikita/.ssh/id_ed25519
+
+      Host nixbuild.vital.company
+        Port 2222
+        PubkeyAcceptedKeyTypes ssh-ed25519
+        ServerAliveInterval 60
+        IPQoS throughput
+        IdentityFile /home/nikita/.ssh/id_ed25519
+    '';
+
+    knownHosts = {
+      nixbuild = {
+        hostNames = [ "nixbuild.vital.company" ];
+        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ+jBIzENqxs/p7dFEAIjG8e5TT+A9Gvhi1cKNdIJ9vW";
+      };
+    };
+  };
 }
