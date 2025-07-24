@@ -47,6 +47,8 @@
         (import ./vpn.nix)
       ]
       ++ [ (import ./virtualization.nix) ]
-      ++ [ (import ./hardware.nix) ];
+      ++ [ (import ./hardware.nix) ]
+      ++ [ (import /home/nikita/dev/vital-nix/vm/software-workstation.nix)]
+      ++ [ (import /home/nikita/dev/vital-nix/vm/conductor.nix)];
   };
 }
