@@ -96,11 +96,14 @@ Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   '';
 
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    nil
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      wget
+      git
+      nil
+    ];
+    localBinInPath = true;
+  };
 
   nixpkgs.config = {
     allowUnfree = true;
