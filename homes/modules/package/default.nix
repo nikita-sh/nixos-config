@@ -63,7 +63,6 @@
       fd
       imagemagick # for neofetch
       gh
-      npm
     ]
   );
 }
