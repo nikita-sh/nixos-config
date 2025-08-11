@@ -4,6 +4,7 @@
     enable = true;
     profiles.default = {
       extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
+        anthropic.claude-code
         vscodevim.vim
         eamodio.gitlens
         github.vscode-pull-request-github
