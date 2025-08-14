@@ -1,6 +1,7 @@
 {
   self,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -69,6 +70,17 @@
     wget
     git
     nil
+    # TODO: lazy - add this to an overlay in home-manager
+    unstable.claude-code
+  ];
+
+  nixpkgs.overlays = [
+    (final: _: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (final.stdenv.hostPlatform) system;
+        inherit (final) config;
+      };
+    })
   ];
 
   nixpkgs.config.allowUnfree = true;

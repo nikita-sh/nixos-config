@@ -51,7 +51,6 @@
       home-manager
       fd
       gh
-      claude-code
     ]
   );
 }
