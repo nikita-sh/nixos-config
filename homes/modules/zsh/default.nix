@@ -30,7 +30,6 @@
     initContent = lib.mkBefore ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
-      export $PATH=$PATH:~/.local/bin
       source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
     '';
     plugins = [
@@ -133,5 +132,11 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.thefuck = {
+    enable = true;
+    enableZshIntegration = true;
+    alias = "fuck";
   };
 }
