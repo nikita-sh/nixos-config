@@ -73,8 +73,7 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nix run nix-darwin switch -- --flake /Users/nikita/dev/nixos-config/systems/falke#falke";
-      nixosrbu = "sudo nix run nix-darwin switch -- --upgrade --flake /Users/nikita/dev/nixos-config/systems/falke#falke";
+      nixosrb = "sudo nix run nix-darwin -- --flake /Users/nikita/dev/nixos-config/systems/falke#falke";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
@@ -82,8 +81,7 @@
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
       # home-manager  
-      hmrb = "export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake /Users/nikita/dev/nixos-config/homes/falke#nikita@falke";
-      hmrbu = "export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --upgrade --flake /Users/nikita/dev/nixos-config/homes/falke#nikita@falke";
+      hmrb = "export NIXPKGS_ALLOW_UNFREE=1 && home-manager --flake /Users/nikita/dev/nixos-config/homes/falke#nikita@falke";
 
       # Git
       g = "git";
