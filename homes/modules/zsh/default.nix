@@ -113,6 +113,7 @@
       gd = "git diff";
       grb = "git rebase";
       grbi = "git rebase -i";
+      gsh = "git show";
 
       # fw
       pbrun-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
