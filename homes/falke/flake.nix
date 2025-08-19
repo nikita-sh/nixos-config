@@ -12,6 +12,10 @@
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nil = {
+      url = "github:oxalica/nil";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -22,6 +26,7 @@
       nixpkgs,
       nixpkgs-unstable,
       nix-vscode-extensions,
+      nil,
       ...
     }:
     let
@@ -47,8 +52,9 @@
         inherit pkgs;
 
         extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs system;
         };
+
         modules = [ 
             {
               home = {
@@ -71,6 +77,7 @@
             ../modules/vscode
         ];
       };
+
       checks.${system} = {
         default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
       };

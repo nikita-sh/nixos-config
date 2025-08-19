@@ -1,6 +1,8 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 {
-  home.packages = (
+  home.packages = let 
+    nilPkg = inputs.nil.packages.${system}.default;
+  in (
     with pkgs;
     with gnome;
     [
@@ -16,11 +18,8 @@
       todo # cli todo list
       toipe # typing test in the terminal
       yazi # terminal file manager
-
-      # C / C++
       gcc
       gnumake
-
       bleachbit # cache cleaner
       cmatrix
       ffmpeg
@@ -33,23 +32,18 @@
       qalculate-gtk # calculator
       unzip
       wget
-    #   xdg-utils
       direnv
       nmap
       neofetch
       pstree
       qemu
-      # rustc
       starfetch
       zoom-us
-
       screen
       jq
-      # firefox
       calcurse
       vim # just in case
       probe-rs
-      # bitwarden
       pkg-config
       wireshark
       inetutils
@@ -64,6 +58,7 @@
       imagemagick # for neofetch
       gh
       nodejs_20
+      nilPkg
     ]
   );
 }

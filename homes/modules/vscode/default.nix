@@ -47,15 +47,11 @@
         "git.openRepositoryInParentFolders" = "always";
         "window.titleBarStyle" = "custom";
         "workbench.colorTheme" = "Gruvbox Dark Hard";
-        "workbench.iconTheme" = "catppuccin-latte";
         "files.insertFinalNewline" = true;
-        "files.trimFinalNewline" = true;
         "window.zoomLevel" = 0;
-        "gitlens.ai.experimental.generateCommitMessage.enabled" = false;
         "gitlens.launchpad.indicator.enabled" = false;
         "gitlens.launchpad.indicator.polling.enabled" = false;
         "gitlens.plusFeatures.enabled" = false;
-        "gitlens.showWelcomeOnInstall" = false;
         "gitlens.showWhatsNewAfterUpgrades" = false;
         "gitlens.telemetry.enabled" = false;
         "haskell.manageHLS" = "PATH";
@@ -81,8 +77,11 @@
         "rust-analyzer.check.command" = "clippy";
         "extensions.verifySignature" = false;
         "parallels-desktop.extension.path" = "/Users/nikita/.parallels-desktop-vscode";
+        "parallels-desktop.devops-service.path" = "/Users/nikita/.parallels-desktop-vscode/tools/prldevops";
+        "parallels-desktop.prlctl.path" = "/usr/local/bin/prlctl";
+        "parallels-desktop.brew.path" = "/opt/homebrew/bin/brew";
+        "parallels-desktop.git.path" = "/Users/nikita/.nix-profile/bin/git";
       };
     };
-    
   };
 }
