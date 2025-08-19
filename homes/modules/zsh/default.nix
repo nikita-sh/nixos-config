@@ -72,8 +72,7 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nixos-rebuild switch --flake /home/nikita/dev/nixos-config/systems/kolibri#kolibri";
-      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake /home/nikita/dev/nixos-config/systems/kolibri#kolibri";
+      nixosrb = "sudo nixos-rebuild --flake /home/nikita/dev/nixos-config/systems/kolibri#kolibri";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
@@ -81,7 +80,7 @@
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
       # home manager 
-      hmrb = "home-manager switch --flake ~/dev/nixos-config/homes/kolibri#nikita@kolibri";
+      hmrb = "home-manager --flake ~/dev/nixos-config/homes/kolibri#nikita@kolibri";
 
       # Git
       g = "git";
