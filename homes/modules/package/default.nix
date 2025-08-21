@@ -51,6 +51,7 @@
       home-manager
       fd
       gh
+      mosh
     ]
   );
 }

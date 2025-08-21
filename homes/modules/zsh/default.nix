@@ -24,10 +24,13 @@
         # "starship"
       ];
     };
-    initExtraFirst = ''
+
+    initContent = ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
+      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
     '';
+
     plugins = [
       {
         name = "powerlevel10k";
@@ -45,18 +48,12 @@
         };
       }
     ];
-    initExtra = ''
-      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
-    '';
-    shellAliases = {
-      # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
+    shellAliases = {
       # Utils
       c = "clear";
       cd = "z";
-      # vim = "nvim";
       cat = "bat";
-      # ls = "lsd";
       nano = "micro";
       icat = "kitten icat";
       dsize = "du -hs";
@@ -117,6 +114,9 @@
       grba = "git rebase --abort";
       grbi = "git rebase -i";
       gsh = "git show";
+      gcp = "git cherry-pick";
+      gcpc = "git cherry-pick --continue";
+      gcpa = "git cherry-pick --abort";
 
       # fw
       pbrun-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
