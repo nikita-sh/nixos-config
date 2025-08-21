@@ -89,6 +89,8 @@
       gs = "git status";
       gb = "git branch";
       gm = "git merge";
+      gmc = "git merge --continue";
+      gma = "git merge --abort";
       gp = "git pull";
       gpo = "git pull origin";
       gps = "git push";
@@ -111,6 +113,8 @@
       grl = "git reflog";
       gd = "git diff";
       grb = "git rebase";
+      grbc = "git rebase --continue";
+      grba = "git rebase --abort";
       grbi = "git rebase -i";
       gsh = "git show";
 
