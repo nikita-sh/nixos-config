@@ -39,6 +39,7 @@
         mcu-debug.memory-view
         mcu-debug.peripheral-viewer
         mcu-debug.rtos-views
+        rhaiscript.vscode-rhai
       ];
       userSettings = {
         "editor.fontFamily" = "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace";
