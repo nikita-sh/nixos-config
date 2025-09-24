@@ -22,5 +22,6 @@
     fugitive.enable = true;
     indent-blankline.enable = true;
     dashboard.enable = true;
+    direnv.enable = true;
   };
 }
