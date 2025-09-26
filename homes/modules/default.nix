@@ -21,6 +21,7 @@
     ./scripts
     ./slack
     ./swaylock
+    ./tmux
     ./waybar
     ./wofi
     ./spicetify

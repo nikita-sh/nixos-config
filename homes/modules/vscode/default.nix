@@ -57,7 +57,7 @@
         "gitlens.telemetry.enabled" = false;
         "haskell.manageHLS" = "PATH";
         "nix.enableLanguageServer" = true;
-        "nix.formatterPath" = "nixfmt";
+        # "nix.formatterPath" = "nixfmt";
         "nix.serverPath" = "nil";
         "nix.serverSettings" = {
           "nil" = {
