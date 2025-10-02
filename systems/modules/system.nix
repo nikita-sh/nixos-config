@@ -70,9 +70,21 @@
     wget
     git
     nil
+    vim
     # TODO: lazy - add this to an overlay in home-manager
     unstable.claude-code
   ];
+
+  environment.etc = {
+    "netrc" = {
+      text = ''
+        machine hydra.vital.company
+          login nikita
+          password DUMMY
+      '';
+      mode = "0600";
+    };
+  };
 
   nixpkgs.overlays = [
     (final: _: {
