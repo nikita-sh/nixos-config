@@ -1,8 +1,8 @@
-{pkgs, ...}:
+{lib, ...}:
 {
   programs.wezterm = {
     enable = true;
-    enableZshIntergation = true;
-    colorScheme = "Gruvbox Dark (Gogh)";
+    enableZshIntegration = true;
+    extraConfig = lib.fileContents ./wezterm.lua;
   };
 }

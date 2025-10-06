@@ -71,10 +71,10 @@
             ../modules/kitty
             ../modules/nvim
             ../modules/package
-            # ../modules/slack
             ../modules/zsh
             ../modules/obsidian
             ../modules/vscode
+            ../modules/wezterm
         ];
       };
 

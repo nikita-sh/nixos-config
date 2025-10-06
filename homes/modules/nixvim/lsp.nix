@@ -11,6 +11,7 @@
         bashls.enable = true;
         clangd.enable = true;
         ghcide.enable = true;
+        lua_ls.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = false;

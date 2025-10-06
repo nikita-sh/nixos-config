@@ -16,17 +16,18 @@
     ./mako
     ./micro
     ./nvim
+    ./obsidian
     ./package
-    ./taskwarrior
     ./scripts
     ./slack
     ./swaylock
     ./tmux
+    ./taskwarrior
     ./waybar
     ./wofi
     ./spicetify
-    ./zsh
-    ./obsidian
     ./vscode
+    ./zsh
+    ./wezterm
   ];
 }

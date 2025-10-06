@@ -59,6 +59,7 @@
       gh
       nodejs_20
       nilPkg
+      wezterm
     ]
   );
 }
