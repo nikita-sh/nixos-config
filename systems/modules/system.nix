@@ -25,6 +25,7 @@
       builders-use-substitutes = true
       keep-outputs = true
       keep-derivations = true
+      netrc-file = /etc/netrc
     '';
     buildMachines = [
       {
