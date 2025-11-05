@@ -10,12 +10,12 @@
     nvim-autopairs.enable = true;
     gitsigns.enable = true;
     markdown-preview.enable = true;
-    telescope = {
-      enable = true;
-      extensions = {
-        fzf-native.enable = true;
-      };
-    };
+    # telescope = {
+    #   enable = true;
+    #   extensions = {
+    #     fzf-native.enable = true;
+    #   };
+    # };
     nix.enable = true;
     nvim-tree.enable = true;
     lazy.enable = true;
