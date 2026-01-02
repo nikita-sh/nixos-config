@@ -52,6 +52,7 @@
       fd
       gh
       mosh
+      buf
     ]
   );
 }
