@@ -6,7 +6,7 @@
     };
     web-devicons.enable = true;
     oil.enable = true;
-    treesitter.enable = true;
+    # treesitter.enable = true;
     nvim-autopairs.enable = true;
     gitsigns.enable = true;
     markdown-preview.enable = true;

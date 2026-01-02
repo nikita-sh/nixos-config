@@ -8,7 +8,7 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
-      # inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };

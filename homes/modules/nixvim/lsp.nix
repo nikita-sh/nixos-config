@@ -5,7 +5,7 @@
       pyright.enable = true;
       marksman.enable = true;
       nil_ls.enable = true;
-      dockerls.enable = true;
+      # dockerls.enable = true;
       bashls.enable = true;
       clangd.enable = true;
       ghcide.enable = true;
