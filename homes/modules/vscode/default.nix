@@ -81,7 +81,7 @@
         "rust-analyzer.cargo.features" = "all";
         "rust-analyzer.cachePriming.enable" = true;
         "rust-analyzer.cargo.targetDir" = true;
-        # "rust-analyzer.check.command" = "clippy";
+        "rust-analyzer.check.command" = "clippy";
         "extensions.verifySignature" = false;
         "parallels-desktop.extension.path" = "/Users/nikita/.parallels-desktop-vscode";
         "parallels-desktop.devops-service.path" = "/Users/nikita/.parallels-desktop-vscode/tools/prldevops";
