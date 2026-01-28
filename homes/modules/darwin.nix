@@ -5,7 +5,6 @@
     ./lsd
     ./btop
     ./cava
-    ./chatgpt-cli
     ./discord
     ./direnv
     ./git
