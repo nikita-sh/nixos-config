@@ -42,18 +42,16 @@
       source ~/dev/nixos-config/homes/modules/zsh/dot-p10k.zsh # && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
     '';
     shellAliases = {
-      # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
-
-      # Utils
+            # Utils
       c = "clear";
       cd = "z";
-      # vim = "nvim";
       cat = "bat";
       nano = "micro";
       icat = "kitten icat";
       dsize = "du -hs";
       findw = "grep -rl";
       nvim = "nix run ~/dev/nixos-config/homes/$HOST#neovim --";
+      s = "kitten ssh";
       diff = "delta";
       t = "task";
       gpt = "chatgpt";
@@ -63,8 +61,7 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nixos-rebuild switch --flake /home/nikita/dev/nixos-config/systems/mynah#mynah";
-      nixosrbu = "sudo nixos-rebuild switch --upgrade --flake /home/nikita/dev/nixos-config/systems/mynah#mynah";
+      nixosrb = "sudo nixos-rebuild --flake /home/nikita/dev/nixos-config/systems/mynah#mynah";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
@@ -72,7 +69,7 @@
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
       # home manager 
-      hmrb = "home-manager switch --flake ~/dev/nixos-config/homes/mynah#nikita@mynah";
+      hmrb = "home-manager --flake ~/dev/nixos-config/homes/mynah#nikita@mynah";
 
       # Git
       g = "git";
@@ -81,6 +78,8 @@
       gs = "git status";
       gb = "git branch";
       gm = "git merge";
+      gmc = "git merge --continue";
+      gma = "git merge --abort";
       gp = "git pull";
       gpo = "git pull origin";
       gps = "git push";
@@ -103,18 +102,20 @@
       grl = "git reflog";
       gd = "git diff";
       grb = "git rebase";
+      grbc = "git rebase --continue";
+      grba = "git rebase --abort";
       grbi = "git rebase -i";
-
-      # fw
-      pbrun-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
-    };
+      gsh = "git show";
+      gcp = "git cherry-pick";
+      gcpc = "git cherry-pick --continue";
+      gcpa = "git cherry-pick --abort";    };
 
     sessionVariables = {
-      HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
-      HYDRA_X86_64_BUILDER = "hydra-x86-64.vital.company";
-      HYDRA_SSH_USER = "nikita";
+      # HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";
+      # HYDRA_X86_64_BUILDER = "hydra-x86-64.vital.company";
+      # HYDRA_SSH_USER = "nikita";
       # HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_ed25519";
-      NIX_KEY = "/home/nikita/nix-keys/kolibri.private.pem";
+      # NIX_KEY = "/home/nikita/nix-keys/mynah.private.pem";
     };
   };
 
