@@ -31,7 +31,10 @@
 	  ../modules/system.nix
           ../modules/security.nix
 	  {
-	    wsl.enable = true;
+	    wsl = {
+              enable = true;
+	      defaultUser = "nikita";
+	    };
 	    system.stateVersion = "24.05";
 	  }
         ];

@@ -40,7 +40,7 @@
       screen
       jq
       vim # just in case
-      probe-rs
+      # probe-rs
       # bitwarden
       inetutils
       dig
