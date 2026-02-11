@@ -16,13 +16,13 @@ config.adjust_window_size_when_changing_font_size = false
 config.use_dead_keys = false
 config.enable_scroll_bar = true
 config.window_background_opacity = 0.85
--- config.window_decorations = "NONE"
+config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
 config.scrollback_lines = 3000
 config.default_workspace = "home"
 -- For example, changing the color scheme:
 config.color_scheme = "Gruvbox Dark (Gogh)"
--- config.window_padding = { left = "1cell", right = "1cell", top = 0, bottom = 0 }
+config.window_padding = { left = "1cell", right = "1cell", top = "1cell", bottom = "1cell" }
 -- Dim inactive panes
 config.inactive_pane_hsb = {
   saturation = 0.7,
