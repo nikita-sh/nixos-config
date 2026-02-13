@@ -7,7 +7,10 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
- local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+-- Window settings
+config.initial_cols = 140 
+config.initial_rows = 40 
 -- Font Settings
 config.font = wezterm.font("FiraCode Nerd Font Mono")
 config.font_size = 12
@@ -31,6 +34,13 @@ config.inactive_pane_hsb = {
 
 config.leader = { key = "a", mods = "CTRL", timeout_miliseconds = 1000 }
 config.keys = {
+  { 
+    key = "\r", 
+    mods = "LEADER|SHIFT", 
+    action = wezterm.action_callback(function(window, pane) 
+      window:toggle_fullscreen() 
+    end), 
+  },
   -- send C-a when pressing C-a twice
   { key = "a", mods = "LEADER", action = act.SendKey({ key = "a", mods = "CTRL" }) },
   { key = "c", mods = "LEADER", action = act.ActivateCopyMode },

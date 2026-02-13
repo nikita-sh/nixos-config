@@ -88,6 +88,10 @@
         "parallels-desktop.prlctl.path" = "/usr/local/bin/prlctl";
         "parallels-desktop.brew.path" = "/opt/homebrew/bin/brew";
         "parallels-desktop.git.path" = "/Users/nikita/.nix-profile/bin/git";
+        "protobuf.autoDetection.prompted" = false;
+        "protobuf.autoDetection.enabled" = false;
+        "protobuf.binaryInspector.enabled" = false;
+        "protobuf.codegen.generateOnSave" = false;
       };
     };
   };
