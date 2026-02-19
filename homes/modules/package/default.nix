@@ -40,10 +40,10 @@
       screen
       jq
       vim # just in case
-      probe-rs
+      probe-rs-tools
       # bitwarden
       inetutils
-      dig
+      # dig
       dnsutils
       pstree
       strace
