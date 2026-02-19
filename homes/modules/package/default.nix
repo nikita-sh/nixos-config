@@ -43,11 +43,11 @@
       jq
       calcurse
       vim # just in case
-      probe-rs
+      probe-rs-tools
       pkg-config
       wireshark
       inetutils
-      dig
+      # dig
       dnsutils
       pstree
       # strace

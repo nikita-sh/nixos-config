@@ -131,10 +131,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-
-  programs.thefuck = {
-    enable = true;
-    enableZshIntegration = true;
-    alias = "fuck";
-  };
 }
