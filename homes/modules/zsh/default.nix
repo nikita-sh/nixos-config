@@ -96,6 +96,7 @@
       gpst = "git push --follow-tags";
       gpso = "git push origin";
       gc = "git commit";
+      gcf = "git commit --fixup";
       gcm = "git commit -m";
       gtag = "git tag -ma";
       gco = "git checkout";
@@ -113,6 +114,7 @@
       gd = "git diff";
       grb = "git rebase";
       grbi = "git rebase -i";
+      grbias = "git rebase -i --autosquash";
 
       # fw
       pbrun-atsam18 = "sudo probe-rs run --chip ATSAMD51J18A";
