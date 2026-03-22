@@ -9,6 +9,7 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
@@ -28,7 +29,8 @@
       nixvimLib = nixvim.lib.${system};
       nixvim' = nixvim.legacyPackages.${system};
       nixvimModule = {
-        inherit pkgs-unstable;
+	pkgs = pkgs-unstable;
+	# inherit pkgs;
 	module = import ../modules/nixvim;
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
