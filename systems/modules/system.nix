@@ -88,7 +88,7 @@
     users = {
       nikita = {
         isNormalUser = true;
-        extraGroups = ["wheel"];
+        extraGroups = [ "wheel" ];
         shell = pkgs.zsh;
       };
     };

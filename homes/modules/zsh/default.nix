@@ -42,7 +42,7 @@
       source ~/dev/nixos-config/homes/modules/zsh/dot-p10k.zsh # && ${pkgs.openssh}/bin/ssh-add ~/.ssh/id_ed25519
     '';
     shellAliases = {
-            # Utils
+      # Utils
       c = "clear";
       cd = "z";
       cat = "bat";
@@ -68,7 +68,7 @@
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
-      # home manager 
+      # home manager
       hmrb = "home-manager --flake ~/dev/nixos-config/homes/mynah#nikita@mynah";
 
       # Git
@@ -108,7 +108,8 @@
       gsh = "git show";
       gcp = "git cherry-pick";
       gcpc = "git cherry-pick --continue";
-      gcpa = "git cherry-pick --abort";    };
+      gcpa = "git cherry-pick --abort";
+    };
 
     sessionVariables = {
       # HYDRA_AARCH64_BUILDER = "hydra-aarch64.vital.company";

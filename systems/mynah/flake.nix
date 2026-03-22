@@ -17,26 +17,26 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-	  inherit (inputs) self nixpkgs;
+          inherit (inputs) self nixpkgs;
           hostname = "mynah";
         };
         modules = [
-	  inputs.vscode-server.nixosModules.default
+          inputs.vscode-server.nixosModules.default
           nixos-wsl.nixosModules.wsl
           # ./hardware.nix
-	  # ../modules/bootloader.nix
-	  ../modules/network.nix
-	  ../modules/program.nix
-	  ../modules/services.nix
-	  ../modules/system.nix
+          # ../modules/bootloader.nix
+          ../modules/network.nix
+          ../modules/program.nix
+          ../modules/services.nix
+          ../modules/system.nix
           ../modules/security.nix
-	  {
-	    wsl = {
+          {
+            wsl = {
               enable = true;
-	      defaultUser = "nikita";
-	    };
-	    system.stateVersion = "24.05";
-	  }
+              defaultUser = "nikita";
+            };
+            system.stateVersion = "24.05";
+          }
         ];
       };
     };

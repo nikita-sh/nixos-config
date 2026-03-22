@@ -17,6 +17,6 @@
           installRustc = false;
         };
       };
-    };      
-  }; 
+    };
+  };
 }

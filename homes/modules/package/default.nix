@@ -28,7 +28,7 @@
       openssl
       unzip
       wget
-    #   xdg-utils
+      #   xdg-utils
       direnv
       nmap
       neofetch
@@ -44,7 +44,7 @@
       # bitwarden
       inetutils
       dig
-      dnsutils
+      # dnsutils
       pstree
       strace
       patchelf

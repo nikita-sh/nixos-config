@@ -113,16 +113,16 @@
         extraSpecialArgs = {
           inherit inputs;
         };
-        modules = [ 
-	        ../modules/kolibri.nix 
-	        {
-	          home = {
-	            homeDirectory = "/home/nikita";
-	            stateVersion = "24.05";
-	            username = "nikita";
-	          };
-	        }
-	      ];
+        modules = [
+          ../modules/kolibri.nix
+          {
+            home = {
+              homeDirectory = "/home/nikita";
+              stateVersion = "24.05";
+              username = "nikita";
+            };
+          }
+        ];
       };
     };
 }

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = [
-    (pkgs.callPackage ./cliamp.nix {})
+    (pkgs.callPackage ./cliamp.nix { })
   ];
 }

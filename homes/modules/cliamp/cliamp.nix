@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: pkgs.buildGoModule {
+}:
+pkgs.buildGoModule {
   pname = "cliamp";
   name = "cliamp";
 
@@ -13,11 +14,14 @@
     alsa-lib
     flac
     libvorbis
-    oggvideotools 
+    oggvideotools
   ];
 
-  src = fetchGit {
-    url = "https://github.com/bjarneo/cliamp.git";
+  src = pkgs.fetchFromGitHub {
+    owner = "bjarneo";
+    repo = "cliamp";
+    rev = "13c6ffff8d245e023b5b5d06674c28a5763ed832";
+    hash = "sha256-b14rcfn8R18w7QuhOv24G7xvrvo8eUI62G+Ac2fpOhw=";
   };
 
   vendorHash = "sha256-UMDCpfSGfvJmI+sImaFzgZpLNaLMgEnmGCqERwPokHM=";

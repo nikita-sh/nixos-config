@@ -197,7 +197,7 @@
     # cpu = {
     #   format = "{usage}% ";
     #   format-alt = "{avg_frequency}% ";
-    #   interval = 2;  
+    #   interval = 2;
     # };
 
     # memory = {
@@ -362,7 +362,7 @@
   #     	"󰤥 "
   #     	"󰤨 "
   #     ];
-  #   }; 
+  #   };
 
   #   bluetooth = {
   #     format = "";
