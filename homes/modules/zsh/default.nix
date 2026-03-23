@@ -80,7 +80,7 @@
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
-      # home-manager  
+      # home-manager
       hmrb = "export NIXPKGS_ALLOW_UNFREE=1 && home-manager --flake /Users/nikita/dev/nixos-config/homes/falke#nikita@falke";
 
       # Git

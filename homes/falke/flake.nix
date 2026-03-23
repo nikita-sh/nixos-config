@@ -42,8 +42,8 @@
       nixvimLib = nixvim.lib.${system};
       nixvim' = nixvim.legacyPackages.${system};
       nixvimModule = {
-      	pkgs = pkgs-unstable;
-	      module = import ../modules/nixvim;
+        pkgs = pkgs-unstable;
+        module = import ../modules/nixvim;
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
     in
@@ -55,26 +55,26 @@
           inherit inputs system;
         };
 
-        modules = [ 
-            {
-              home = {
-                homeDirectory = "/Users/nikita";
-                stateVersion = "24.05";
-                username = "nikita";
-              };
-            }
-            ../modules/bat
-            ../modules/lsd
-            ../modules/btop
-            ../modules/direnv
-            ../modules/git
-            ../modules/kitty
-            ../modules/nvim
-            ../modules/package
-            ../modules/zsh
-            ../modules/obsidian
-            ../modules/vscode
-            ../modules/wezterm
+        modules = [
+          {
+            home = {
+              homeDirectory = "/Users/nikita";
+              stateVersion = "24.05";
+              username = "nikita";
+            };
+          }
+          ../modules/bat
+          ../modules/lsd
+          ../modules/btop
+          ../modules/direnv
+          ../modules/git
+          ../modules/kitty
+          ../modules/nvim
+          ../modules/package
+          ../modules/zsh
+          ../modules/obsidian
+          ../modules/vscode
+          ../modules/wezterm
         ];
       };
 

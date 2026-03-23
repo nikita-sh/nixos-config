@@ -5,7 +5,7 @@
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      gruvbox 
+      gruvbox
     ];
     extraConfig = ''
       colorscheme gruvbox

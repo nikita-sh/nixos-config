@@ -49,11 +49,11 @@
         "window.titleBarStyle" = "custom";
         "workbench.colorTheme" = "Gruvbox Dark Hard";
         "files.insertFinalNewline" = true;
-	"files.watcherExclude" = {
-  	  "**/.git/objects/**" = true;
-  	  "**/.git/subtree-cache/**" = true;
-  	  "**/node_modules/*/**" = true;
-  	};
+        "files.watcherExclude" = {
+          "**/.git/objects/**" = true;
+          "**/.git/subtree-cache/**" = true;
+          "**/node_modules/*/**" = true;
+        };
         "window.zoomLevel" = 0;
         "gitlens.launchpad.indicator.enabled" = false;
         "gitlens.launchpad.indicator.polling.enabled" = false;

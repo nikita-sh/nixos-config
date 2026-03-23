@@ -26,7 +26,7 @@
       nixvim' = nixvim.legacyPackages.${system};
       nixvimModule = {
         inherit pkgs;
-	      module = import ../modules/nixvim;
+        module = import ../modules/nixvim;
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
       system = "x86_64-linux";
@@ -38,15 +38,15 @@
           inherit inputs;
         };
         modules = [
-	        ../modules/mynah.nix
-	        {
-	          home = {
-	            homeDirectory = "/home/nikita";
-	            stateVersion = "24.05";
-	            username = "nikita";
-	          };
-	        }
-	      ];
+          ../modules/mynah.nix
+          {
+            home = {
+              homeDirectory = "/home/nikita";
+              stateVersion = "24.05";
+              username = "nikita";
+            };
+          }
+        ];
       };
 
       checks.${system} = {

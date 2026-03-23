@@ -40,7 +40,10 @@
         speedFactor = 2;
         sshUser = "nikita";
         sshKey = "/Users/nikita/.ssh/id_ed25519";
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+        ];
       }
       {
         hostName = "nixbuild.vital.company";
@@ -49,7 +52,10 @@
         speedFactor = 2;
         sshUser = "nikita";
         sshKey = "/Users/nikita/.ssh/id_ed25519";
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+        ];
       }
       {
         hostName = "hydra-aarch64.vital.company";
@@ -92,8 +98,8 @@
   };
 
   programs.sssh.extraConfig = ''
-Host *
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    Host *
+      IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   '';
 
   environment = {

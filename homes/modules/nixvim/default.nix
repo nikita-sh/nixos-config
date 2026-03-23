@@ -1,6 +1,6 @@
 {
   imports = [
-    ./plugins.nix  
+    ./plugins.nix
     ./options.nix
     ./mappings.nix
     # ./lsp.nix

@@ -6,7 +6,6 @@
       enable = true;
       wheelNeedsPassword = false;
     };
-    pam.services.swaylock = {};
+    pam.services.swaylock = { };
   };
 }
-
