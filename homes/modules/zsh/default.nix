@@ -62,7 +62,6 @@
       icat = "kitten icat";
       dsize = "du -hs";
       findw = "grep -rl";
-      nvim = "nix run ~/dev/nixos-config/homes/$HOST#neovim --";
       s = "kitten ssh";
       diff = "delta";
       t = "task";

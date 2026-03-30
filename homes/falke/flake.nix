@@ -56,7 +56,6 @@
           ../modules/btop
           ../modules/direnv
           ../modules/git
-          ../modules/kitty
           ../modules/package
           ../modules/zsh
           ../modules/obsidian
