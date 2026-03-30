@@ -6,7 +6,7 @@
     ./btop
     ./direnv
     ./git
-    ./nvim
+    ../../shared/nvim
     ./package
     ./zsh
     ./vscode-server
