@@ -20,6 +20,7 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
+    { import = "lsp"}, 
   },
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
   -- Configure any other settings here. See the documentation for more details.
