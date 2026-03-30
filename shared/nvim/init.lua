@@ -1,5 +1,6 @@
-require("config.options")
-require("config.lazy")
-require("config.telescope")
+require "config.options"
+require "config.lazy"
 
-require("config.keys.telescope")
+require "plugins.telescope"
+
+require "keys.telescope"
