@@ -1,7 +1,14 @@
-return {
-  "LuaLS/lua-language-server",
-  version = "^3",
-  config = function() 
-    vim.g.lua-language-server = {}
-  end,
-}
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      workspace = {
+        library = { vim.env.VIMRUNTIME },
+      },
+    },
+  },
+})
+
+vim.lsp.enable("lua_ls")
+
+return {}

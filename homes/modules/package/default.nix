@@ -53,6 +53,9 @@
       gh
       mosh
       buf
+      lua
+      lua-language-server
+      python3
     ]
   );
 }

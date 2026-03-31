@@ -23,6 +23,11 @@ return {
               procMacro = {
                 enable = true,
               },
+              inlayHints = {
+                typeHints = { enable = true },
+                parameterHints = { enable = true },
+                chainingHints = { enable = true },
+              },
             },
           },
         },

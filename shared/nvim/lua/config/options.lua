@@ -34,3 +34,16 @@ vim.opt.writebackup = false -- No need to be too safe
 
 vim.g.mapleader = ";"
 vim.g.maplocalleader = " ;"
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+      vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+
+      vim.keymap.set('n', '<leader>th', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }, { bufnr = event.buf })
+      end, { buffer = event.buf, desc = '[T]oggle Inlay [H]ints' })
+    end
+  end,
+})
