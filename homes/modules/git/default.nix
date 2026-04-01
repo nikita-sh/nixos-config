@@ -2,10 +2,11 @@
 {
   programs.git = {
     enable = true;
-
     settings = {
-      user.name = "Nikita Shumeiko";
-      user.email = "nikita.shumeiko@vitalbio.com";
+      user = {
+        name = "Nikita Shumeiko";
+        email = "nikita.shumeiko@vitalbio.com";
+      };
 
       alias = {
         p = "pull";

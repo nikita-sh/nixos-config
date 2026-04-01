@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/release-24.05";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
@@ -14,7 +14,7 @@
     }:
     {
       nixosConfigurations.mynah = nixpkgs.lib.nixosSystem {
-        system = "x86-64-linux";
+        system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
           inherit (inputs) self nixpkgs;
@@ -23,13 +23,20 @@
         modules = [
           inputs.vscode-server.nixosModules.default
           nixos-wsl.nixosModules.wsl
-          ./hardware.nix
-          ../modules/bootloader.nix
+          # ./hardware.nix
+          # ../modules/bootloader.nix
           ../modules/network.nix
           ../modules/program.nix
           ../modules/services.nix
           ../modules/system.nix
           ../modules/security.nix
+          {
+            wsl = {
+              enable = true;
+              defaultUser = "nikita";
+            };
+            system.stateVersion = "24.05";
+          }
         ];
       };
     };

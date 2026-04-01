@@ -34,6 +34,7 @@
       unzip
       wget
       #   xdg-utils
+      #   xdg-utils
       direnv
       nmap
       neofetch
