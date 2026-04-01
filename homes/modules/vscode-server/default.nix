@@ -1,5 +1,5 @@
 { inputs, ... }:
 {
-  imports = [inputs.vscode-server.homeModules.default];
+  imports = [ inputs.vscode-server.homeModules.default ];
   services.vscode-server.enable = true;
 }

@@ -61,7 +61,7 @@
       "[nix]" = {
         "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
       };
-      "rust-analyzer.cargo.features" = "all";
+      "rust-analyzer.cargo.allFeatures" = "true";
     };
   };
   # services.vscode-server = {

@@ -5,7 +5,6 @@
     ./lsd
     ./btop
     ./cava
-    ./chatgpt-cli
     ./discord
     ./direnv
     ./git
@@ -20,6 +19,6 @@
     ./spicetify
     ./zsh
     ./obsidian
-    ./vscode
+    ./wezterm
   ];
 }

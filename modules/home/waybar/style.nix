@@ -194,18 +194,18 @@ in
   #   font-size: 11px;
   #   min-height: 0;
   # }
-  # 
+  #
   # tooltip {
   # 	background: #282828;
   # 	border: 0px solid;
   # 	border-radius: 0px;
   # }
-  # 
+  #
   # window#waybar {
   #   background: #282828;
   #   color: #ebdbb2;
   # }
-  # 
+  #
   # #workspaces button {
   #   padding: 0 0.6em;
   #   color: #a89984;
@@ -216,21 +216,21 @@ in
   #   margin-top: 2px;
   #   margin-bottom: 2px;
   # }
-  # 
+  #
   # #workspaces button.active {
   #   color: #ebdbb2;
   #   background: #665c54;
   # }
-  # 
+  #
   # #workspaces button.urgent {
   #   color: #1d2021;
   #   background: #fb4934;
   # }
-  # 
+  #
   # #workspaces button:hover {
   #   background: #665c54;
   # }
-  # 
+  #
   # #battery,
   # #pulseaudio,
   # #temperature,
@@ -259,17 +259,17 @@ in
   #   margin-bottom: 4px;
   #   border-radius: 0px;
   # }
-  # 
+  #
   # #battery {
   #   padding: 0 0.6em;
   #   margin-right: 4px;
   # }
-  # 
+  #
   # #tray {
   #   padding: 0 0.6em;
   #   margin-right: 4px;
   # }
-  # 
+  #
   # #custom-tray-icon {
   #   margin-left: 0px;
   # }

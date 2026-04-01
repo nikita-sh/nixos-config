@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}:
 {
   home.packages = (
     with pkgs;
@@ -28,7 +33,7 @@
       openssl
       unzip
       wget
-    #   xdg-utils
+      #   xdg-utils
       direnv
       nmap
       neofetch

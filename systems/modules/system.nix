@@ -35,7 +35,10 @@
         speedFactor = 2;
         sshUser = "nikita";
         sshKey = "/home/nikita/.ssh/id_ed25519";
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+        ];
       }
       {
         hostName = "nixbuild.vital.company";
@@ -44,7 +47,10 @@
         speedFactor = 2;
         sshUser = "nikita";
         sshKey = "/home/nikita/.ssh/id_ed25519";
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+        ];
       }
       {
         hostName = "hydra-aarch64.vital.company";
@@ -53,7 +59,10 @@
         speedFactor = 2;
         sshUser = "nikita";
         # sshKey = "/home/nikita/.ssh/id_ed25519";
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+        ];
       }
       {
         hostName = "hydra-x86-64.vital.company";
@@ -62,50 +71,40 @@
         speedFactor = 2;
         sshUser = "nikita";
         # sshKey = "/home/nikita/.ssh/id_ed25519";
-        supportedFeatures = [ "benchmark" "big-parallel" ];
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+        ];
       }
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    nil
-    vim
-    # TODO: lazy - add this to an overlay in home-manager
-    unstable.claude-code
-  ];
-
-  environment.etc = {
-    "netrc" = {
-      text = ''
-        machine hydra.vital.company
-          login nikita
-          password DUMMY
-      '';
-      mode = "0600";
-    };
+  nixpkgs = {
+    overlays = [
+      self.overlays.default
+      inputs.nur.overlay
+    ];
   };
 
-  nixpkgs.overlays = [
-    (final: _: {
-      unstable = import inputs.nixpkgs-unstable {
-        inherit (final.stdenv.hostPlatform) system;
-        inherit (final) config;
-      };
-    })
-  ];
+  programs.sssh.extraConfig = ''
+    Host *
+      IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  '';
 
-  nixpkgs.config.allowUnfree = true;
+  environment = {
+    systemPackages = with pkgs; [
+      wget
+      git
+      nil
+    ];
+    localBinInPath = true;
+  };
 
-  users = {
-    users = {
-      nikita = {
-        isNormalUser = true;
-        extraGroups = ["wheel" "dialout"];
-        shell = pkgs.zsh;
-      };
-    };
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
   };
 
   time.timeZone = "America/Toronto";
@@ -118,25 +117,25 @@
         Hostname hydra-x8664
         User nikita
         ForwardAgent yes
-        IdentityFile /home/nikita/.ssh/id_ed25519
+        IdentityFile /Users/nikita/.ssh/id_ed25519
 
       Host hydra-aarch64
         Hostname hydra-aarch64
         User nikita
         ForwardAgent yes
-        IdentityFile /home/nikita/.ssh/id_ed25519
+        IdentityFile /Users/nikita/.ssh/id_ed25519
 
       Host hydra-x86-64.vital.company
         Hostname hydra-x86-64.vital.company
         User nikita
         ForwardAgent yes
-        IdentityFile /home/nikita/.ssh/id_ed25519
+        IdentityFile /Users/nikita/.ssh/id_ed25519
 
       Host hydra-aarch64.vital.company
         Hostname hydra-aarch64.vital.company
         User nikita
         ForwardAgent yes
-        IdentityFile /home/nikita/.ssh/id_ed25519
+        IdentityFile /Users/nikita/.ssh/id_ed25519
 
       Host nixbuild.vital.company
         Port 2222

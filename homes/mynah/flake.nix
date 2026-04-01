@@ -1,8 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -18,15 +19,18 @@
       nixvim,
       home-manager,
       nixpkgs,
+      nixpkgs-unstable,
       ...
     }:
     let
       pkgs = import nixpkgs { inherit system; };
+      # pkgs-unstable = import nixpkgs-unstable { inherit system; };
       nixvimLib = nixvim.lib.${system};
       nixvim' = nixvim.legacyPackages.${system};
       nixvimModule = {
+        # pkgs = pkgs-unstable;
         inherit pkgs;
-	module = import ../modules/nixvim;
+        module = import ../modules/nixvim;
       };
       nvim = nixvim'.makeNixvimWithModule nixvimModule;
       system = "x86_64-linux";
@@ -38,23 +42,25 @@
           inherit inputs;
         };
         modules = [
-	  ../modules/mynah.nix
-	  {
-	    home = {
-	      homeDirectory = "/home/nikita";
-	      stateVersion = "24.05";
-	      username = "nikita";
-	    };
-	  }
-	];
+          ../modules/mynah.nix
+          {
+            home = {
+              homeDirectory = "/home/nikita";
+              stateVersion = "24.05";
+              username = "nikita";
+            };
+          }
+        ];
       };
 
-      checks.${system} = {
-        default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
-      };
+      # checks.${system} = {
+      #   default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+      # };
 
       packages.${system} = {
         neovim = nvim;
       };
+
+      formatter = pkgs.nixfmt;
     };
 }

@@ -1,5 +1,6 @@
 { ... }:
 {
+  _module.args.hostname = "kolibri";
   imports = [
     ./bat
     ./lsd

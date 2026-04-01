@@ -3,11 +3,11 @@
   programs.kitty = {
     enable = true;
 
-    theme = "Gruvbox Dark";
+    themeFile = "gruvbox-dark-hard";
 
     font = {
-      name = "FiraCode Nerd Font";
-      size = 12;
+      name = "FiraCode Nerd Font Mono";
+      size = 13;
     };
 
     settings = {
@@ -17,6 +17,7 @@
       scrollback_lines = 10000;
       enable_audio_bell = false;
       mouse_hide_wait = 60;
+      macos_alt_as_option = "yes";
 
       ## Tabs
       tab_title_template = "{index}";

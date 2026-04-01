@@ -6,7 +6,7 @@
     theme = "Gruvbox Dark";
 
     font = {
-      name = "FiraCode Nerd Font";
+      name = "FiraCode Nerd Font Mono";
       size = 11;
     };
 

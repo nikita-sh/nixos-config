@@ -1,5 +1,8 @@
 {
   pkgs,
+  lib,
+  system,
+  hostname ? "",
   ...
 }:
 {
@@ -12,7 +15,17 @@
       enable = true;
       plugins = [
         "alias-finder"
+        "alias-finder"
         "fzf"
+        "colored-man-pages"
+        "direnv"
+        "rust"
+        "systemd"
+        "tailscale"
+        "nmap"
+        "kitty"
+        "colorize"
+        # "starship"
         "colored-man-pages"
         "direnv"
         "rust"
@@ -24,11 +37,10 @@
         # "starship"
       ];
     };
-
-    initContent = ''
+    initContent = lib.mkBefore ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
-      source ~/dev/nixos-config/modules/home/zsh/dot-p10k.zsh
+      source ~/dev/nixos-config/homes/modules/zsh/dot-p10k.zsh
     '';
 
     plugins = [
@@ -68,15 +80,19 @@
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nixosrb = "sudo nixos-rebuild --flake /home/nikita/dev/nixos-config/systems/kolibri#kolibri";
+      nixrb =
+        let
+          cmd = if system == "darwin" then "nix run nix-darwin" else "nixos-rebuild";
+        in
+        "sudo ${cmd} -- --flake ~/nixos-config/systems/${hostname}#${hostname} switch";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       # nix-clean = "sudo nix-collect-garbage -d";
       # nix-cleanold = "sudo nix-collect-garbage --delete-old";
       # nix-cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
 
-      # home manager 
-      hmrb = "home-manager --flake ~/dev/nixos-config/homes/kolibri#nikita@kolibri";
+      # home manager
+      hmrb = "home-manager --flake ~/dev/nixos-config/homes/${hostname}#nikita@${hostname}";
 
       # Git
       g = "git";
@@ -93,6 +109,7 @@
       gpst = "git push --follow-tags";
       gpso = "git push origin";
       gc = "git commit";
+      gcf = "git commit --fixup";
       gcm = "git commit -m";
       gtag = "git tag -ma";
       gco = "git checkout";
@@ -116,9 +133,11 @@
       gcp = "git cherry-pick";
       gcpc = "git cherry-pick --continue";
       gcpa = "git cherry-pick --abort";
+      grbias = "git rebase -i --autosquash";
 
       # fw
-      pbrun-atsam = "sudo probe-rs run --chip ATSAMD51J18A";
+      pbrun-atsam18 = "sudo probe-rs run --chip ATSAMD51J18A";
+      pbrun-atsam20 = "sudo probe-rs run --chip ATSAMD51J20A";
     };
 
     sessionVariables = {
@@ -127,8 +146,8 @@
       # HYDRA_AARCH64_BUILDER = "nixbuild.vital.company";
       # HYDRA_X86_64_BUILDER = "nixbuild.vital.company";
       HYDRA_SSH_USER = "nikita";
-      HYDRA_SSH_IDENTITY = "/home/nikita/.ssh/id_ed25519";
-      NIX_KEY = "/home/nikita/nix-keys/kolibri.private.pem";
+      HYDRA_SSH_IDENTITY = "~/.ssh/id_ed25519";
+      NIX_KEY = "~/nix-keys/nixos.private.pem";
     };
   };
 
