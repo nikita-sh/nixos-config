@@ -24,25 +24,18 @@
     }:
     let
       pkgs = import nixpkgs { inherit system; };
-      # pkgs-unstable = import nixpkgs-unstable { inherit system; };
-      nixvimLib = nixvim.lib.${system};
-      nixvim' = nixvim.legacyPackages.${system};
-      nixvimModule = {
-        # pkgs = pkgs-unstable;
-        inherit pkgs;
-        module = import ../modules/nixvim;
-      };
-      nvim = nixvim'.makeNixvimWithModule nixvimModule;
       system = "x86_64-linux";
+      hostname = "mynah";
     in
     {
-      homeConfigurations."nikita@mynah" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."nikita@${hostname}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs system hostname;
         };
         modules = [
           ../modules/mynah.nix
+	  ../../shared/nvim
           {
             home = {
               homeDirectory = "/home/nikita";
@@ -51,14 +44,6 @@
             };
           }
         ];
-      };
-
-      # checks.${system} = {
-      #   default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
-      # };
-
-      packages.${system} = {
-        neovim = nvim;
       };
 
       formatter = pkgs.nixfmt;

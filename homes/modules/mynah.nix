@@ -6,7 +6,6 @@
     ./btop
     ./direnv
     ./git
-    ./nvim
     ./package
     ./zsh
     ./cliamp
