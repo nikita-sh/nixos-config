@@ -1,6 +1,0 @@
-{ ... }:
-{
-  services.coder = {
-    enable = true;
-  };
-}

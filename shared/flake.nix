@@ -14,10 +14,32 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
-  {
-    homeManagerModules = [
-      ./nvim
-    ];
-  };
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    let
+      transformModulePaths =
+        paths:
+        builtins.listToAttrs (
+          map (path: {
+            name = builtins.baseNameOf path;
+            value = import path;
+          }) paths
+        );
+    in
+    {
+      homeManagerModules = transformModulePaths [
+        ./bat
+        ./btop
+        ./cliamp
+        ./direnv
+        ./git
+        ./lsd
+        ./nvim
+        ./packages
+        ./tmux
+        ./vscode
+        ./vscode-server
+        ./zsh
+      ];
+    };
 }
