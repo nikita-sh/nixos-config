@@ -34,13 +34,14 @@
         ./cliamp
         ./direnv
         ./git
-	      ./home-manager
+        ./home-manager
         ./lsd
         ./nvim
         ./packages
         ./tmux
         ./vscode
         ./vscode-server
+        ./wezterm
         ./zsh
       ];
     };

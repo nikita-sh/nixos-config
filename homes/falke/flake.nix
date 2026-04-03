@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,8 +9,9 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nil = {
       url = "github:oxalica/nil";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+    shared.url = "path:../../shared";
   };
 
   outputs =
@@ -19,7 +19,7 @@
       self,
       home-manager,
       nixpkgs,
-      nixpkgs-unstable,
+      shared,
       nix-vscode-extensions,
       nil,
       ...
@@ -33,7 +33,6 @@
           nix-vscode-extensions.overlays.default
         ];
       };
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       homeConfigurations."nikita@falke" = home-manager.lib.homeManagerConfiguration {
@@ -51,17 +50,19 @@
               username = "nikita";
             };
           }
-          ../modules/bat
-          ../modules/lsd
-          ../modules/btop
-          ../modules/direnv
-          ../modules/git
-          ../modules/package
-          ../modules/zsh
-          ../modules/obsidian
-          ../modules/vscode
-          ../modules/wezterm
-          ../../shared/nvim
+          (shared.homeManagerModules.bat)
+          (shared.homeManagerModules.btop)
+          (shared.homeManagerModules.claude)
+          (shared.homeManagerModules.direnv)
+          (shared.homeManagerModules.git)
+          (shared.homeManagerModules.home-manager)
+          (shared.homeManagerModules.nvim)
+          (shared.homeManagerModules.packages)
+          (shared.homeManagerModules.tmux)
+          (shared.homeManagerModules.vscode)
+          (shared.homeManagerModules.lsd)
+          (shared.homeManagerModules.wezterm)
+          (shared.homeManagerModules.zsh)
         ];
       };
     };

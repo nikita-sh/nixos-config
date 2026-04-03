@@ -1,12 +1,11 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
+    shared.url = "path:../../shared";
   };
 
   outputs =
@@ -14,7 +13,7 @@
       self,
       home-manager,
       nixpkgs,
-      nixpkgs-unstable,
+      shared,
       ...
     }:
     let
@@ -23,7 +22,6 @@
         inherit system;
         config.allowUnfree = true;
       };
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       homeConfigurations."nikita@kolibri" = home-manager.lib.homeManagerConfiguration {
@@ -41,6 +39,18 @@
               username = "nikita";
             };
           }
+          (shared.homeManagerModules.bat)
+          (shared.homeManagerModules.btop)
+          (shared.homeManagerModules.claude)
+          (shared.homeManagerModules.direnv)
+          (shared.homeManagerModules.git)
+          (shared.homeManagerModules.home-manager)
+          (shared.homeManagerModules.nvim)
+          (shared.homeManagerModules.packages)
+          (shared.homeManagerModules.tmux)
+          (shared.homeManagerModules.vscode-server)
+          (shared.homeManagerModules.lsd)
+          (shared.homeManagerModules.zsh)
         ];
       };
     };

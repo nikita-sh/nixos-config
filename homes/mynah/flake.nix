@@ -25,9 +25,9 @@
       ...
     }:
     let
-      pkgs = import nixpkgs { 
-      	inherit system; 
-	config.allowUnfree = true;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
       };
       system = "x86_64-linux";
       hostname = "mynah";
@@ -39,7 +39,6 @@
           inherit inputs system hostname;
         };
         modules = [
-	  ../modules/mynah.nix
           {
             home = {
               homeDirectory = "/home/nikita";
@@ -47,16 +46,16 @@
               username = "nikita";
             };
           }
-          # (shared.homeManagerModules.bat)
-          # (shared.homeManagerModules.btop)
+          (shared.homeManagerModules.bat)
+          (shared.homeManagerModules.btop)
           (shared.homeManagerModules.claude)
-          # (shared.homeManagerModules.direnv)
-          # (shared.homeManagerModules.git)	        
-	  # (shared.homeManagerModules.home-manager)
+          (shared.homeManagerModules.direnv)
+          (shared.homeManagerModules.git)
+          (shared.homeManagerModules.home-manager)
           (shared.homeManagerModules.nvim)
-          # (shared.homeManagerModules.packages)
-          # (shared.homeManagerModules.lsd)
-          # (shared.homeManagerModules.zsh)
+          (shared.homeManagerModules.packages)
+          (shared.homeManagerModules.lsd)
+          (shared.homeManagerModules.zsh)
         ];
       };
 
