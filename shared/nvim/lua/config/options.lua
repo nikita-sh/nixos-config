@@ -1,36 +1,55 @@
--- global variables
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = false
+vim.opt.backup = true -- Turn on regular backups
+vim.opt.backupdir = vim.fn.getenv("HOME") .. "/.local/share/nvim/backup"
+vim.opt.colorcolumn = "96"
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.cursorline = true        -- Highlight the current line
+vim.opt.expandtab = true         -- Use spaces not tabs
+vim.opt.fileformats = "unix,dos" -- always prefer unix line endings, regardless of platform
+vim.opt.foldmethod = "indent"
+vim.opt.foldnestmax = 5
+vim.opt.foldlevelstart = 99
+vim.opt.grepprg = "rg"
+vim.opt.hidden = true                  -- Allow buffers to be hidden when not visible
+vim.opt.ignorecase = true              -- Case fold when searching
+vim.opt.lazyredraw = true              -- Don't draw while executing macros and similar
+vim.opt.list = true                    -- Show whitespace (trailing -s and >s)'
+vim.opt.listchars = { tab = "▸\\ ", trail = "·", nbsp = "_", extends = "…" }
+vim.opt.matchtime = 2                  -- Highlight matching bracket for 2/10ths of a second
+vim.opt.mouse = "a"                    -- Enable mouse mode
+vim.opt.number = true                  -- Instead of showing 0 at the cursor line, show the actual line
+vim.opt.relativenumber = true          -- Show line number distance from cursor for easy j/k
+vim.opt.scrolloff = 7                  -- Keep 7 lines visible when moving through file
+vim.opt.shiftwidth = 2                 -- 2 space indent stops
+vim.opt.showmatch = true               -- Highlight matching brackets
+vim.opt.showtabline = 2                -- Always show the tabline
+vim.opt.smartcase = true               -- But don't case fold uppercase
+vim.opt.splitbelow = true              -- Put new splits down
+vim.opt.splitright = true              -- Put new vsplits right
+vim.opt.termguicolors = true           -- Use true color support in terminals
+vim.opt.timeoutlen = 2000              -- Set multikey timeout to 2 seconds
+vim.opt.undofile = true                -- Persist undo information across sessions
+vim.opt.wildmode = "list:longest,full" -- Configure wildmenu
+vim.opt.wrap = false                   -- Don't wrap lines by default
+vim.opt.writebackup = false            -- No need to be too safe
 
--- options
-vim.o.number = true
-vim.o.mouse = 'a'
-vim.o.showmode = false
-vim.o.breakindent = true
-vim.o.undofile = true
-vim.o.signcolumn = true
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-vim.o.splitright = true
-vim.o.splitbelow = true
-vim.o.inccommand = 'split'
-vim.o.confirm = true
+vim.g.mapleader = ";"
+vim.g.maplocalleader = " ;"
 
-vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
-end)
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+      vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open Diagnostic [Q]uickfix List' })
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+      vim.keymap.set('n', '<leader>th', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }, { bufnr = event.buf })
+      end, { buffer = event.buf, desc = '[T]oggle Inlay [H]ints' })
+    end
+  end,
+})
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function(event)
+    vim.lsp.buf.format({ async = false })
   end,
 })
