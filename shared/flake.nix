@@ -30,9 +30,11 @@
       homeManagerModules = transformModulePaths [
         ./bat
         ./btop
+        ./claude
         ./cliamp
         ./direnv
         ./git
+	      ./home-manager
         ./lsd
         ./nvim
         ./packages

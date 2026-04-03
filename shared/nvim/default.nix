@@ -1,14 +1,21 @@
-{ pkgs, ... }:
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      gruvbox
+  pkgs,
+  ...
+}:
+{
+  home = {
+    packages = [
+      pkgs.neovim
     ];
-    extraConfig = ''
-      colorscheme gruvbox
-    '';
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      FZF_DEFAULT_COMMAND = "fd --type f";
+    };
+  };
+
+  xdg = {
+    configFile.nvim.source = ./.;
   };
 }

@@ -79,17 +79,17 @@
     ];
   };
 
-  nixpkgs = {
-    overlays = [
-      self.overlays.default
-      inputs.nur.overlay
-    ];
-  };
+  # nixpkgs = {
+  #   overlays = [
+  #     # self.overlays.default
+  #     inputs.nur.overlay
+  #   ];
+  # };
 
-  programs.sssh.extraConfig = ''
-    Host *
-      IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-  '';
+  # programs.ssh.extraConfig = ''
+  #   Host *
+  #     IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  # '';
 
   environment = {
     systemPackages = with pkgs; [
@@ -102,14 +102,11 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
   };
 
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_US.UTF-8";
-  system.stateVersion = "23.05";
+  # system.stateVersion = "23.05";
 
   programs.ssh = {
     extraConfig = ''

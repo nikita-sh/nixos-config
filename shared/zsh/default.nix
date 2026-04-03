@@ -78,11 +78,11 @@
       nix-shell = "nix-shell --run zsh";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
-      nixrb =
+      nixosrb =
         let
           cmd = if system == "darwin" then "nix run nix-darwin" else "nixos-rebuild";
         in
-        "sudo ${cmd} -- --flake ~/nixos-config/systems/${hostname}#${hostname} switch";
+        "sudo ${cmd} --flake ~/nixos-config/systems/${hostname}#${hostname}";
 
       # home manager
       hmrb = "home-manager --flake ~/dev/nixos-config/homes/${hostname}#nikita@${hostname}";

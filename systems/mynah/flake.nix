@@ -23,8 +23,6 @@
         modules = [
           inputs.vscode-server.nixosModules.default
           nixos-wsl.nixosModules.wsl
-          # ./hardware.nix
-          # ../modules/bootloader.nix
           ../modules/network.nix
           ../modules/program.nix
           ../modules/services.nix
@@ -36,6 +34,7 @@
               defaultUser = "nikita";
             };
             system.stateVersion = "24.05";
+            nixpkgs.config.allowUnfree = true;
           }
         ];
       };
